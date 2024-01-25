@@ -56,20 +56,8 @@
 								Vous trouverez ici les informations concernant notre budget, c'est-à-dire d'où vient notre financement, et ce que l'on prévoit 
 								de faire avec celui-ci.
 							</p>
-							<span class="image main"><img src="images/budget.jpg" alt="Image" height="300" width="300" source = "border-radius: 50px" /></span>
-							<p>
-								
-								<form action="https://www.paypal.com/donate" method="post" target="_top"> 
-									<!-- Identify your business so that you can collect the payments. --> 
-									<input type="hidden" name="business" value="donations@kcparkfriends.org"> 
-									<!-- Specify details about the contribution --> 
-									<input type="hidden" name="no_recurring" value="0"> 
-									<input type="hidden" name="item_name" value="Friends of the Park"> 
-									<input type="hidden" name="item_number" value="Fall Cleanup Campaign"> 
-									<input type="hidden" name="currency_code" value="USD"> 
-									<!-- Display the payment button. --> 
-									<input type="image" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="Donate"> 
-									<img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" ></form>
+							<span class="image main"><img src="images/budget.jpg" alt="Image" height="400" source = "border-radius: 50px" /></span>
+							<p>									
 								<h3>Financement</h3>
 								
 								<p>
@@ -77,6 +65,22 @@
 									allant du fermier de notre région à la multi-nationnal en passant par des PME. On est fier aussi de dire que l'on a réussi 
 									à être soutenue par l'état français. Vous pouvez voir grâce au graphique suivant le pourcentage de chacun des partis.
 								</p>
+								<center>
+								<div id="donate-button-container">
+									<div id="donate-button"></div>
+									<script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+									<script>
+									PayPal.Donation.Button({
+									env:'production',
+									hosted_button_id:'UE97FSMPLKHWQ',
+									image: {
+									src:'https://www.paypalobjects.com/en_US/FR/i/btn/btn_donateCC_LG.gif',
+									alt:'Donate with PayPal button',
+									title:'PayPal - The safer, easier way to pay online!',
+									}
+									}).render('#donate-button');
+									</script>
+									</div></center>
 
 								<h3> Coût </h3>
 
@@ -86,6 +90,9 @@
 								<b> Prévisionnel </b>
 								<p>	Vous pouvez voir ci-dessous ce qui nous coûterais le plus, on est enclin à venir baisser nos salaires évidemment afin 
 									d'aller au bout de notre projet si besoin.</p>
+
+									<p align="center">
+										<img src="images/budget_croquis.png" alt="Image" height="300" width="500"/></p>
 
 								<b>Réel</b>
 								<p>A venir.</p>
