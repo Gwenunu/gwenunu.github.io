@@ -3896,31 +3896,60 @@ input, select, textarea {
 }
 
 /* Grille des partenaires */
+.section-partners {
+    padding: 40px 0; /* Espacement autour de la section */
+    text-align: center;
+    background-color: #f9f9f9; /* Couleur de fond optionnelle */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centre horizontalement la section */
+    padding: 0 20px; /* Ajoute un peu d'espacement horizontal */
+}
+
 .partners-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne si la largeur est insuffisante */
+    justify-content: center; /* Centre les éléments horizontalement */
+    gap: 20px; /* Espacement entre les items */
 }
 
 .partner-item {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    flex: 1 1 calc(33.33% - 20px); /* Chaque conteneur occupe un tiers (moins les marges) */
+    max-width: 300px; /* Largeur maximale pour chaque conteneur */
+    background: white; /* Couleur de fond */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de carte */
+    padding: 20px; /* Espacement interne */
+    display: flex;
+    flex-direction: column; /* Dispose les éléments verticalement */
+    align-items: center; /* Centre les éléments à l'intérieur */
+    text-align: center; /* Texte centré */
 }
 
 .partner-item img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Espacement sous l'image */
 }
 
-.partner-item p {
-    font-size: 1rem;
-    color: #777;
+.separation-barre {
+    width: 50%; /* Barre plus courte */
+    margin: 10px auto; /* Centré horizontalement */
+    border: 1px solid #ddd; /* Style de la barre */
 }
 
+/* Responsive Design */
+@media (max-width: 992px) {
+    .partner-item {
+        flex: 1 1 calc(50% - 20px); /* Deux colonnes sur tablette */
+    }
+}
+
+@media (max-width: 768px) {
+    .partner-item {
+        flex: 1 1 100%; /* Une colonne sur mobile */
+    }
+}
 /* Effet au survol */
 .partner-item:hover {
     transform: translateY(-5px);
