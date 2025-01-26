@@ -124,7 +124,7 @@ input, select, textarea {
 		color: rgba(0, 0, 0, 0.75);
 		margin: 0;
 		padding: 0;
-		border: 50px solid #000013; /* Bordure sombre autour de la page */
+		border: 20px solid #000013; /* Bordure sombre autour de la page */
 		box-sizing: border-box; /* Assurez-vous que la bordure ne modifie pas la taille du contenu */
 
 	}
@@ -3939,7 +3939,7 @@ input, select, textarea {
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {
+@media (max-width: 990px) {
     .partner-item {
         flex: 1 1 calc(50% - 20px); /* Deux colonnes sur tablette */
     }
@@ -3954,4 +3954,24 @@ input, select, textarea {
 .partner-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+#nav.active {
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 736px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    #nav {
+        display: none; /* Masquer le menu par défaut sur petit écran */
+    }
+
+    #nav.active {
+        display: block; /* Afficher le menu lorsque l'icône hamburger est cliquée */
+    }
+
+
 }

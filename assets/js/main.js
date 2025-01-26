@@ -121,9 +121,13 @@
 		});
 
 	// MEnu
-	const menu = document.getElementById("menu");
-    menu.classList.toggle("show");
 
-	
+	const toggleButton = document.getElementById('menu-toggle');
+	const nav = document.getElementById('nav');
+
+	toggleButton.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
+
 
 })(jQuery);
