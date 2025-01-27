@@ -101,7 +101,7 @@ input, select, textarea {
 	body {
 		background-color: #979797;
 		/* background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #ffffff 15%, #acacac 85%); */
-		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #b6b6b6 15%, #ffffff 85%);
+		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #8f8f8f 15%, #ffffff 85%);
 		/* background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #dbdbdb 15%, #000f41 85%); */
 		/* background-image: url("images/overlay.png"), linear-gradient(45deg, #e9e9e9 15%, #cfcfcf 85%); */
 	}
@@ -2782,7 +2782,7 @@ input, select, textarea {
 		}
 
 	table th {
-		color: #ffffff;
+		color: #b8b8b8;
 	}
 
 	table thead {
