@@ -2553,24 +2553,13 @@ input, select, textarea {
 
 /* Work Item */
 
-	.work-item {
-		margin: 0 0 2em 0;
+	.work-item .image img {
+		width: 100%;          /* occupe toute la largeur du conteneur */
+		height: 250px;        /* même hauteur pour toutes les miniatures */
+		object-fit: cover;    /* découpe l’image pour remplir sans déformation */
+		display: block;       /* évite les petits espaces sous l’image */
+		border-radius: 5px;   /* optionnel : angles arrondis */
 	}
-
-		.work-item .image {
-			margin: 0 0 1.5em 0;
-		}
-
-		.work-item h3 {
-			font-size: 1em;
-			margin: 0 0 0.5em 0;
-		}
-
-		.work-item p {
-			font-size: 0.8em;
-			line-height: 1.5em;
-			margin: 0;
-		}
 
 /* Header */
 
