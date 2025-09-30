@@ -1,5 +1,5 @@
 /*
-	Strata by HTML5 UP - Modifié avec pop-up améliorée
+	Strata by HTML5 UP - Modifié avec pop-up améliorée et carrousel
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -71,6 +71,72 @@
 			});
 		}
 
+	// Fonction pour initialiser un carrousel
+		function initCarousel($carousel) {
+			var $slides = $carousel.find('.carousel-slide');
+			var $indicators = $carousel.find('.carousel-indicator');
+			var currentSlide = 0;
+			var totalSlides = $slides.length;
+
+			if (totalSlides <= 1) return; // Pas besoin de carrousel pour 1 image
+
+			function showSlide(index) {
+				$slides.removeClass('active');
+				$indicators.removeClass('active');
+				$slides.eq(index).addClass('active');
+				$indicators.eq(index).addClass('active');
+			}
+
+			function nextSlide() {
+				currentSlide = (currentSlide + 1) % totalSlides;
+				showSlide(currentSlide);
+			}
+
+			function prevSlide() {
+				currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+				showSlide(currentSlide);
+			}
+
+			// Navigation par boutons
+			$carousel.find('.carousel-prev').on('click', function(e) {
+				e.preventDefault();
+				prevSlide();
+			});
+
+			$carousel.find('.carousel-next').on('click', function(e) {
+				e.preventDefault();
+				nextSlide();
+			});
+
+			// Navigation par indicateurs
+			$indicators.on('click', function() {
+				currentSlide = $(this).index();
+				showSlide(currentSlide);
+			});
+
+			// Navigation clavier
+			$(document).on('keydown', function(e) {
+				if ($carousel.closest('.popup-overlay').is(':visible')) {
+					if (e.key === 'ArrowLeft') prevSlide();
+					if (e.key === 'ArrowRight') nextSlide();
+				}
+			});
+
+			// Swipe pour mobile
+			var touchStartX = 0;
+			var touchEndX = 0;
+
+			$carousel.on('touchstart', function(e) {
+				touchStartX = e.changedTouches[0].screenX;
+			});
+
+			$carousel.on('touchend', function(e) {
+				touchEndX = e.changedTouches[0].screenX;
+				if (touchStartX - touchEndX > 50) nextSlide();
+				if (touchEndX - touchStartX > 50) prevSlide();
+			});
+		}
+
 	// Pop-up améliorée type page
 		function createEnhancedPopup() {
 			// Créer l'overlay
@@ -137,7 +203,7 @@
 			$overlay.append($popup);
 			$body.append($overlay);
 
-			// Animation CSS
+			// Styles CSS pour pop-up et carrousel
 			if (!$('#popup-animation-style').length) {
 				$('<style id="popup-animation-style">').text(`
 					@keyframes popupSlideIn {
@@ -172,7 +238,7 @@
 					.popup-content li {
 						margin-bottom: 8px;
 					}
-					.popup-content img {
+					.popup-content img:not(.carousel-slide img) {
 						max-width: 100%;
 						height: auto;
 						border-radius: 4px;
@@ -194,6 +260,87 @@
 						transform: rotate(90deg);
 						transition: all 0.3s ease;
 					}
+					
+					/* Styles du carrousel */
+					.carousel {
+						position: relative;
+						width: 100%;
+						margin: 20px 0;
+						overflow: hidden;
+						border-radius: 8px;
+						background: #000;
+					}
+					.carousel-inner {
+						position: relative;
+						width: 100%;
+						padding-top: 56.25%; /* Ratio 16:9 */
+					}
+					.carousel-slide {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						opacity: 0;
+						transition: opacity 0.5s ease-in-out;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+					.carousel-slide.active {
+						opacity: 1;
+					}
+					.carousel-slide img {
+						max-width: 100%;
+						max-height: 100%;
+						object-fit: contain;
+						margin: 0;
+					}
+					.carousel-prev, .carousel-next {
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						background: rgba(255, 255, 255, 0.8);
+						border: none;
+						font-size: 24px;
+						padding: 15px 20px;
+						cursor: pointer;
+						z-index: 2;
+						transition: background 0.3s;
+						color: #333;
+					}
+					.carousel-prev:hover, .carousel-next:hover {
+						background: rgba(255, 255, 255, 1);
+					}
+					.carousel-prev {
+						left: 10px;
+					}
+					.carousel-next {
+						right: 10px;
+					}
+					.carousel-indicators {
+						position: absolute;
+						bottom: 15px;
+						left: 50%;
+						transform: translateX(-50%);
+						display: flex;
+						gap: 8px;
+						z-index: 2;
+					}
+					.carousel-indicator {
+						width: 12px;
+						height: 12px;
+						border-radius: 50%;
+						background: rgba(255, 255, 255, 0.5);
+						border: none;
+						cursor: pointer;
+						transition: background 0.3s;
+					}
+					.carousel-indicator.active,
+					.carousel-indicator:hover {
+						background: rgba(255, 255, 255, 1);
+					}
+					
 					@media screen and (max-width: 736px) {
 						.popup-container {
 							margin: 20px;
@@ -201,6 +348,10 @@
 						}
 						.popup-content {
 							padding: 50px 30px 30px;
+						}
+						.carousel-prev, .carousel-next {
+							font-size: 18px;
+							padding: 10px 15px;
 						}
 					}
 				`).appendTo('head');
@@ -282,6 +433,11 @@
 				if (content) {
 					popup.content.html(content);
 					popup.overlay.fadeIn(300);
+					
+					// Initialiser tous les carrousels dans la pop-up
+					popup.content.find('.carousel').each(function() {
+						initCarousel($(this));
+					});
 				}
 			});
 		});
