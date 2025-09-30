@@ -3321,11 +3321,12 @@ input, select, textarea {
 .carousel-slide.active {
 	opacity: 1;
 }
-.carousel-slide img {
+.carousel-slide img, .carousel-slide video {
 	max-width: 100%;
 	max-height: 100%;
 	object-fit: contain;
 	margin: 0;
+	z-index:10;
 }
 .carousel-slide .carousel-caption {
 	position: absolute;
@@ -3337,6 +3338,7 @@ input, select, textarea {
 	color: black;
 	font-size: 18px;
 	text-shadow: #000;
+	z-index: 11;
 }
 .carousel-prev, .carousel-next {
 	position: absolute;
@@ -3347,7 +3349,7 @@ input, select, textarea {
 	font-size: 24px;
 	padding: 15px 20px;
 	cursor: pointer;
-	z-index: 2;
+	z-index: 12;
 	transition: background 0.3s;
 	color: #333;
 }
@@ -3367,7 +3369,7 @@ input, select, textarea {
 	transform: translateX(-50%);
 	display: flex;
 	gap: 8px;
-	z-index: 2;
+	z-index: 12;
 }
 .carousel-indicator {
 	width: 12px;
