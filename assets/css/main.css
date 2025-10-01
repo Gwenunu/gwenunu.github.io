@@ -2456,6 +2456,55 @@ ul.actions.fit.stacked {
     margin-left: -0.5em;
   }
 }
+/* Onglets */
+.tabs {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 99;
+}
+
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.tab-btn.active {
+  background: #333;
+  color: white;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .tab-buttons {
+    flex-direction: column;
+  }
+}
 
 /* Table */
 
