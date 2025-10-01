@@ -197,7 +197,7 @@
       class: "popup-container",
       css: {
         position: "relative",
-        maxWidth: "900px",
+        maxWidth: "1200px",
         margin: "50px auto",
         backgroundColor: "#f0eae4ff",
         borderRadius: "8px",

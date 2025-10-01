@@ -1862,7 +1862,7 @@ header p {
   color: #ebe6ca;
   position: relative;
   margin: 0 0 1.0em 0;
-  text-align: right;
+  text-align: auto;
   font-size: clamp(12px, 2vw, 18px);
 }
 
@@ -2459,7 +2459,7 @@ ul.actions.fit.stacked {
 /* Onglets */
 .tabs {
   width: 100%;
-  max-width: 800px;
+  max-width: 950px;
   margin: 0 auto;
   z-index: 99;
 }
@@ -2474,7 +2474,8 @@ ul.actions.fit.stacked {
 .tab-btn {
   padding: 10px 20px;
   border: none;
-  background: #eee;
+  border-radius: 5px;
+  background: #d6d6d6;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -3550,3 +3551,6 @@ body.is-touch .poptrox-popup .closer {
 .carousel-indicator:hover {
   background: rgba(255, 255, 255, 1);
 }
+
+/* Architecture */
+
