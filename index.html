@@ -736,6 +736,106 @@
                   bibliothèque libre spécialisée dans le traitement d'images en temps réel. OpenCV propose une large
                   gamme de fonctionnalités pour le traitement d'images, ainsi que pour la détection et la
                   reconnaissance d'objets, parmi d'autres applications.</p>
+
+                <h3>Calibration des caméras</h3>
+                  <p>
+                    Avant calibration, les caméras présentent des distorsions optiques qui déforment les images capturées. 
+                    Ces distorsions peuvent affecter la précision des mesures et doivent être corrigées pour obtenir des images fidèles à la réalité.
+                  </p>
+
+                  <ul>
+                    <li><strong>Distorsion radiale :</strong> provoque une courbure des lignes droites, surtout vers les bords de l'image. Plus un point est éloigné du centre, plus la déformation est prononcée.</li>
+                    <li><strong>Distorsion tangentielle :</strong> causée par un léger désalignement entre la lentille et le capteur, entraînant un déplacement non uniforme des points de l'image.</li>
+                  </ul>
+
+                  <p>
+                    Ces distorsions sont corrigées en estimant les coefficients d’un modèle de distorsion, permettant de rectifier l’image. 
+                    La bibliothèque OpenCV propose le modèle « plumb-bob » pour caractériser et corriger les distorsions radiales et tangentielles.
+                  </p>
+
+                  <p>
+                    La calibration a été réalisée à l'aide d'un échiquier, en déplaçant et en inclinant la grille devant les caméras afin d'ajuster précisément les paramètres de position, d’échelle et d’inclinaison.
+                  </p>
+
+                  <img src="images/ck/calib.png" alt="Calibration des caméras" style="width: 600px; height: auto; display: block; margin: auto;" />
+
+                  <h2>Centrale inertielle (IMU)</h2>
+                    <p>
+                      Une centrale inertielle (IMU) combine un accéléromètre et un gyroscope pour mesurer l'accélération linéaire et la vitesse angulaire selon les trois axes (x, y, z). 
+                      Elle permet d'estimer l'orientation et, indirectement, la position d'un système.
+                    </p>
+
+                    <ul>
+                      <li><strong>Accéléromètre :</strong> mesure l'accélération linéaire, y compris l'accélération due à la gravité.</li>
+                      <li><strong>Gyroscope :</strong> mesure la vitesse angulaire autour des axes x, y et z.</li>
+                      <li><strong>Interface :</strong> l’IMU est connectée via I2C, permettant de lire et écrire les registres directement pour exploiter les données.</li>
+                      <li><strong>Filtrage :</strong> les données sont combinées à l’aide d’un filtre complémentaire pour calculer l’orientation du capteur.</li>
+                    </ul>
+
+                    <h3>Calibration de l’IMU</h3>
+
+                    <p>
+                      La calibration a pour objectif de réduire les bruits affectant l'accéléromètre et le gyroscope :
+                    </p>
+
+                    <ul>
+                      <li><strong>Bruit blanc gaussien :</strong> bruit haute fréquence qui affecte continuellement les mesures.</li>
+                      <li><strong>Marche aléatoire :</strong> bruit basse fréquence provoquant une dérive des données sur le long terme.</li>
+                    </ul>
+
+                    <p>
+                      La calibration consiste à :
+                    </p>
+
+                    <ul>
+                      <li>Déterminer la densité spectrale de bruit pour chaque axe afin de caractériser le bruit haute fréquence.</li>
+                      <li>Utiliser la variance d’Allan pour évaluer la stabilité dans le temps et caractériser le bruit basse fréquence.</li>
+                      <li>Rectifier les mesures pour que les valeurs moyennes des composantes gx, gy et gz tendent vers zéro.</li>
+                    </ul>
+                    <div style="display: flex; justify-content: center; gap: 20px; align-items: center;">
+                      <img src="images/ck/imu1.png" alt="Image avant la détection des points d'intérêt"
+                        style="width: 430px; height: auto;" />
+
+                      <img src="images/ck/imu2.png" alt="Image après la détection des points d'intérêt"
+                        style="width: 450px; height: auto;" />
+                    </div>
+
+                    <h2>Commande des moteurs du robot</h2>
+
+                      <p>
+                        Les moteurs du robot sont contrôlés via des topics qui régulent leur vitesse et leur sens de rotation. 
+                        La programmation orientée objet a été utilisée pour gérer ces interactions.
+                      </p>
+
+                      <ul>
+                        <li><strong>Objet I2C :</strong> permet de connecter les moteurs via le bus I2C, de manière similaire à l’IMU.</li>
+                        <li><strong>Contrôleur :</strong> carte 16 canaux qui génère des signaux PWM pour contrôler les moteurs via le driver.</li>
+                        <li><strong>Driver moteur :</strong> pont en H qui permet de contrôler le sens de rotation et la vitesse de deux moteurs à courant continu.</li>
+                      </ul>
+
+                      <p>
+                        Le fonctionnement repose sur la PWM (Pulse Width Modulation) : 
+                        des impulsions électriques rapides sont envoyées, et la durée du signal « haut » détermine la puissance effective transmise au moteur.
+                      </p>
+
+                      <ul>
+                        <li>Le rapport cyclique (ratio entre temps haut et période totale) permet de moduler la vitesse sans changer la fréquence.</li>
+                        <li>Exemple : un rapport cyclique de 50 % correspond à la moitié de la vitesse maximale, tandis que 75 % correspond à 3/4 de la vitesse maximale.</li>
+                      </ul>
+
+                      <p>
+                        L’objet lié au contrôleur lit les signaux PWM, et l’objet lié au moteur utilise ces informations pour décider :
+                      </p>
+
+                      <ul>
+                        <li>si le moteur doit avancer ou reculer,</li>
+                        <li>si le moteur doit rester immobile,</li>
+                        <li>comment coordonner les moteurs pour permettre au robot de tourner avec un angle et une vitesse définis.</li>
+                      </ul>
+
+                      
+
+
               </div>
 
               <div class="tab-content " id="tab6">
