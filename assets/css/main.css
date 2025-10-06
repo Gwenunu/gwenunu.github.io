@@ -195,7 +195,7 @@ select,
 textarea {
   color: #2d2d2d;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
-  font-size: 16pt;
+  font-size: 12pt;
   font-weight: 400;
   line-height: 1.75em;
 }
@@ -3360,7 +3360,7 @@ body.is-touch .poptrox-popup .closer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ffffff;
+  background: #242424ff;
   padding: 15px 25px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -3624,7 +3624,7 @@ body.is-touch .poptrox-popup .closer {
 
 .type-card {
   background: linear-gradient(135deg, #f5f7fa 0%, #ebebeb 100%);
-  /* padding: 25px; */
+  padding: 25px;
   border-radius: 15px;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -3765,8 +3765,8 @@ body.is-touch .poptrox-popup .closer {
 .figure-container {
     text-align: center;
     margin: 30px 0;
-    padding: 20px;
-    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+    padding: 10px;
+    background: white
     border-radius: 15px;
 }
 
@@ -3778,6 +3778,7 @@ body.is-touch .poptrox-popup .closer {
 }
 
 .figure-caption {
+    text-align: center;
     margin-top: 15px;
     color: #666;
     font-style: italic;

@@ -199,7 +199,7 @@
         position: "relative",
         maxWidth: "1200px",
         margin: "50px auto",
-        backgroundColor: "#ffffffff",
+        backgroundColor: "#333333ff",
         borderRadius: "8px",
         boxShadow: "0 10px 40px rgba(0,0,0,0.3)",
         animation: "popupSlideIn 0.4s ease-out",
