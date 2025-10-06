@@ -731,6 +731,50 @@
               </div>
 
               <div class="tab-content " id="tab5">
+                <!-- CARROUSEL D'IMAGES -->
+                <div class="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-slide active">
+                      <video width="100%" controls muted>
+                        <source src="images/ck/Deplacement.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                      <div class="carousel-caption">
+                        Mouvement élémentaires du robot.
+                      </div>
+                    </div>
+                    <div class="carousel-slide ">
+                      <video width="100%" controls muted>
+                        <source src="images/ck/Cartographie.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                      <div class="carousel-caption">
+                        Cartographie de l'environnement.
+                      </div>
+                    </div>
+                    <div class="carousel-slide ">
+                      <video width="100%" controls muted>
+                        <source src="images/ck/Navigation.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                      <div class="carousel-caption">
+                        Robot naviguant seul jusqu'au point spécifié.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Boutons de navigation -->
+                  <button class="carousel-prev">❮</button>
+                  <button class="carousel-next">❯</button>
+
+                  <!-- Indicateurs -->
+                  <div class="carousel-indicators">
+                    <button class="carousel-indicator active"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                  </div>
+                </div>
+
                 <h2>Gestion des caméras</h2>
                 <p>Pour les caméras, la bibliothèque OpenCV (Open Computer Vision) a été utilisée, une
                   bibliothèque libre spécialisée dans le traitement d'images en temps réel. OpenCV propose une large
@@ -738,102 +782,180 @@
                   reconnaissance d'objets, parmi d'autres applications.</p>
 
                 <h3>Calibration des caméras</h3>
-                  <p>
-                    Avant calibration, les caméras présentent des distorsions optiques qui déforment les images capturées. 
-                    Ces distorsions peuvent affecter la précision des mesures et doivent être corrigées pour obtenir des images fidèles à la réalité.
-                  </p>
+                <p>
+                  Avant calibration, les caméras présentent des distorsions optiques qui déforment les images capturées.
+                  Ces distorsions peuvent affecter la précision des mesures et doivent être corrigées pour obtenir des
+                  images fidèles à la réalité.
+                </p>
 
-                  <ul>
-                    <li><strong>Distorsion radiale :</strong> provoque une courbure des lignes droites, surtout vers les bords de l'image. Plus un point est éloigné du centre, plus la déformation est prononcée.</li>
-                    <li><strong>Distorsion tangentielle :</strong> causée par un léger désalignement entre la lentille et le capteur, entraînant un déplacement non uniforme des points de l'image.</li>
-                  </ul>
+                <ul>
+                  <li><strong>Distorsion radiale :</strong> provoque une courbure des lignes droites, surtout vers les
+                    bords de l'image. Plus un point est éloigné du centre, plus la déformation est prononcée.</li>
+                  <li><strong>Distorsion tangentielle :</strong> causée par un léger désalignement entre la lentille et
+                    le capteur, entraînant un déplacement non uniforme des points de l'image.</li>
+                </ul>
 
-                  <p>
-                    Ces distorsions sont corrigées en estimant les coefficients d’un modèle de distorsion, permettant de rectifier l’image. 
-                    La bibliothèque OpenCV propose le modèle « plumb-bob » pour caractériser et corriger les distorsions radiales et tangentielles.
-                  </p>
+                <p>
+                  Ces distorsions sont corrigées en estimant les coefficients d’un modèle de distorsion, permettant de
+                  rectifier l’image.
+                  La bibliothèque OpenCV propose le modèle « plumb-bob » pour caractériser et corriger les distorsions
+                  radiales et tangentielles.
+                </p>
 
-                  <p>
-                    La calibration a été réalisée à l'aide d'un échiquier, en déplaçant et en inclinant la grille devant les caméras afin d'ajuster précisément les paramètres de position, d’échelle et d’inclinaison.
-                  </p>
+                <p>
+                  La calibration a été réalisée à l'aide d'un échiquier, en déplaçant et en inclinant la grille devant
+                  les caméras afin d'ajuster précisément les paramètres de position, d’échelle et d’inclinaison.
+                </p>
 
-                  <img src="images/ck/calib.png" alt="Calibration des caméras" style="width: 600px; height: auto; display: block; margin: auto;" />
+                <img src="images/ck/calib.png" alt="Calibration des caméras"
+                  style="width: 600px; height: auto; display: block; margin: auto;" />
 
-                  <h2>Centrale inertielle (IMU)</h2>
-                    <p>
-                      Une centrale inertielle (IMU) combine un accéléromètre et un gyroscope pour mesurer l'accélération linéaire et la vitesse angulaire selon les trois axes (x, y, z). 
-                      Elle permet d'estimer l'orientation et, indirectement, la position d'un système.
-                    </p>
+                <h2>Centrale inertielle (IMU)</h2>
+                <p>
+                  Une centrale inertielle (IMU) combine un accéléromètre et un gyroscope pour mesurer l'accélération
+                  linéaire et la vitesse angulaire selon les trois axes (x, y, z).
+                  Elle permet d'estimer l'orientation et, indirectement, la position d'un système.
+                </p>
 
-                    <ul>
-                      <li><strong>Accéléromètre :</strong> mesure l'accélération linéaire, y compris l'accélération due à la gravité.</li>
-                      <li><strong>Gyroscope :</strong> mesure la vitesse angulaire autour des axes x, y et z.</li>
-                      <li><strong>Interface :</strong> l’IMU est connectée via I2C, permettant de lire et écrire les registres directement pour exploiter les données.</li>
-                      <li><strong>Filtrage :</strong> les données sont combinées à l’aide d’un filtre complémentaire pour calculer l’orientation du capteur.</li>
-                    </ul>
+                <ul>
+                  <li><strong>Accéléromètre :</strong> mesure l'accélération linéaire, y compris l'accélération due à la
+                    gravité.</li>
+                  <li><strong>Gyroscope :</strong> mesure la vitesse angulaire autour des axes x, y et z.</li>
+                  <li><strong>Interface :</strong> l’IMU est connectée via I2C, permettant de lire et écrire les
+                    registres directement pour exploiter les données.</li>
+                  <li><strong>Filtrage :</strong> les données sont combinées à l’aide d’un filtre complémentaire pour
+                    calculer l’orientation du capteur.</li>
+                </ul>
 
-                    <h3>Calibration de l’IMU</h3>
+                <h3>Calibration de l’IMU</h3>
 
-                    <p>
-                      La calibration a pour objectif de réduire les bruits affectant l'accéléromètre et le gyroscope :
-                    </p>
+                <p>
+                  La calibration a pour objectif de réduire les bruits affectant l'accéléromètre et le gyroscope :
+                </p>
 
-                    <ul>
-                      <li><strong>Bruit blanc gaussien :</strong> bruit haute fréquence qui affecte continuellement les mesures.</li>
-                      <li><strong>Marche aléatoire :</strong> bruit basse fréquence provoquant une dérive des données sur le long terme.</li>
-                    </ul>
+                <ul>
+                  <li><strong>Bruit blanc gaussien :</strong> bruit haute fréquence qui affecte continuellement les
+                    mesures.</li>
+                  <li><strong>Marche aléatoire :</strong> bruit basse fréquence provoquant une dérive des données sur le
+                    long terme.</li>
+                </ul>
 
-                    <p>
-                      La calibration consiste à :
-                    </p>
+                <p>
+                  La calibration consiste à :
+                </p>
 
-                    <ul>
-                      <li>Déterminer la densité spectrale de bruit pour chaque axe afin de caractériser le bruit haute fréquence.</li>
-                      <li>Utiliser la variance d’Allan pour évaluer la stabilité dans le temps et caractériser le bruit basse fréquence.</li>
-                      <li>Rectifier les mesures pour que les valeurs moyennes des composantes gx, gy et gz tendent vers zéro.</li>
-                    </ul>
-                    <div style="display: flex; justify-content: center; gap: 20px; align-items: center;">
-                      <img src="images/ck/imu1.png" alt="Image avant la détection des points d'intérêt"
-                        style="width: 430px; height: auto;" />
+                <ul>
+                  <li>Déterminer la densité spectrale de bruit pour chaque axe afin de caractériser le bruit haute
+                    fréquence.</li>
+                  <li>Utiliser la variance d’Allan pour évaluer la stabilité dans le temps et caractériser le bruit
+                    basse fréquence.</li>
+                  <li>Rectifier les mesures pour que les valeurs moyennes des composantes gx, gy et gz tendent vers
+                    zéro.</li>
+                </ul>
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px;">
+                  <img src="images/ck/imu1.png" alt="Image avant la détection des points d'intérêt"
+                    style="width: 430px; height: auto;" />
 
-                      <img src="images/ck/imu2.png" alt="Image après la détection des points d'intérêt"
-                        style="width: 450px; height: auto;" />
-                    </div>
+                  <img src="images/ck/imu2.png" alt="Image après la détection des points d'intérêt"
+                    style="width: 450px; height: auto ;" />
+                </div>
 
-                    <h2>Commande des moteurs du robot</h2>
+                <h2>Commande des moteurs du robot</h2>
 
-                      <p>
-                        Les moteurs du robot sont contrôlés via des topics qui régulent leur vitesse et leur sens de rotation. 
-                        La programmation orientée objet a été utilisée pour gérer ces interactions.
-                      </p>
+                <p>
+                  Les moteurs du robot sont contrôlés via des topics qui régulent leur vitesse et leur sens de rotation.
+                  La programmation orientée objet a été utilisée pour gérer ces interactions.
+                </p>
 
-                      <ul>
-                        <li><strong>Objet I2C :</strong> permet de connecter les moteurs via le bus I2C, de manière similaire à l’IMU.</li>
-                        <li><strong>Contrôleur :</strong> carte 16 canaux qui génère des signaux PWM pour contrôler les moteurs via le driver.</li>
-                        <li><strong>Driver moteur :</strong> pont en H qui permet de contrôler le sens de rotation et la vitesse de deux moteurs à courant continu.</li>
-                      </ul>
+                <ul>
+                  <li><strong>Objet I2C :</strong> permet de connecter les moteurs via le bus I2C, de manière similaire
+                    à l’IMU.</li>
+                  <li><strong>Contrôleur :</strong> carte 16 canaux qui génère des signaux PWM pour contrôler les
+                    moteurs via le driver.</li>
+                  <li><strong>Driver moteur :</strong> pont en H qui permet de contrôler le sens de rotation et la
+                    vitesse de deux moteurs à courant continu.</li>
+                </ul>
 
-                      <p>
-                        Le fonctionnement repose sur la PWM (Pulse Width Modulation) : 
-                        des impulsions électriques rapides sont envoyées, et la durée du signal « haut » détermine la puissance effective transmise au moteur.
-                      </p>
+                <p>
+                  Le fonctionnement repose sur la PWM (Pulse Width Modulation) :
+                  des impulsions électriques rapides sont envoyées, et la durée du signal « haut » détermine la
+                  puissance effective transmise au moteur.
+                </p>
 
-                      <ul>
-                        <li>Le rapport cyclique (ratio entre temps haut et période totale) permet de moduler la vitesse sans changer la fréquence.</li>
-                        <li>Exemple : un rapport cyclique de 50 % correspond à la moitié de la vitesse maximale, tandis que 75 % correspond à 3/4 de la vitesse maximale.</li>
-                      </ul>
+                <ul>
+                  <li>Le rapport cyclique (ratio entre temps haut et période totale) permet de moduler la vitesse sans
+                    changer la fréquence.</li>
+                  <li>Exemple : un rapport cyclique de 50 % correspond à la moitié de la vitesse maximale, tandis que 75
+                    % correspond à 3/4 de la vitesse maximale.</li>
+                </ul>
 
-                      <p>
-                        L’objet lié au contrôleur lit les signaux PWM, et l’objet lié au moteur utilise ces informations pour décider :
-                      </p>
+                <p>
+                  L’objet lié au contrôleur lit les signaux PWM, et l’objet lié au moteur utilise ces informations pour
+                  décider :
+                </p>
 
-                      <ul>
-                        <li>si le moteur doit avancer ou reculer,</li>
-                        <li>si le moteur doit rester immobile,</li>
-                        <li>comment coordonner les moteurs pour permettre au robot de tourner avec un angle et une vitesse définis.</li>
-                      </ul>
+                <ul>
+                  <li>si le moteur doit avancer ou reculer,</li>
+                  <li>si le moteur doit rester immobile,</li>
+                  <li>comment coordonner les moteurs pour permettre au robot de tourner avec un angle et une vitesse
+                    définis.</li>
+                </ul>
 
-                      
+                <h2>Localisation et cartographie</h2>
+
+                <p>
+                  Pour permettre au robot de se localiser et de cartographier son environnement, le projet utilise le
+                  <strong>ORB-SLAM3</strong>. Il s’agit d’un système de SLAM (Simultaneous Localization and Mapping)
+                  combinant des méthodes directes et basées sur les caractéristiques, permettant d’obtenir des
+                  performances
+                  en temps réel sur diverses plateformes.
+                  ORB-SLAM3 est aujourd’hui largement utilisé dans le milieu académique et industriel.
+                </p>
+
+                <h3>Fonctionnement d’ORB-SLAM3</h3>
+                <ul>
+                  <li>Les images capturées par les caméras sont traitées en mode <strong>stéréo.</li>
+                  <li>Le système détecte des <strong>points d’intérêt</strong> et génère un nuage de points représentant
+                    l’environnement.</li>
+                  <li>Les points verts correspondent aux éléments de l’environnement détectés (par ex. un meuble en angle.)</li>
+                </ul>
+
+                <div style="display: flex; justify-content: center; align-items: center;">
+                  <img src="images/ck/OS2.png" alt="ORB-SLAM3" style="width: 500px; height: auto;" />
+                </div>
+
+                <p>
+                  Grâce à ce processus, le robot est capable de :
+                </p>
+                <ul>
+                  <li>Construire une représentation 3D de son environnement,</li>
+                  <li>Se localiser par rapport à sa position initiale,</li>
+                  <li>Enregistrer le chemin parcouru jusqu’à sa dernière position.</li>
+                </ul>
+                  <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px;">
+                    <img src="images/ck/OS3.png" alt="ORB-SLAM3" style="width: 500px; height: auto;" />
+                  </div>
+
+                <h4>De la carte 3D à la grille d’occupation 2D</h4>
+                <p>
+                  À partir du nuage de points généré par ORB-SLAM3, une <strong>grille d’occupation 2D</strong> est
+                  produite à l’aide
+                  de l’outil <strong>OctoMap</strong>. Cet outil projette la carte 3D en une carte 2D plus simple à
+                  exploiter pour la navigation.
+                </p>
+
+                <ul>
+                  <li>Chaque cellule de la grille est marquée comme <strong>libre</strong> ou <strong>occupée</strong>.
+                  </li>
+                  <li>Une cellule « occupée » indique une zone interdite au déplacement.</li>
+                  <li>La densité de points du nuage sur un axe Z conditionne l’occupation d’une cellule correspondante.
+                  </li>
+                </ul>
+
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px;">
+                  <img src="images/ck/nav4.png" alt="ORB-SLAM3" style="width: 340px; height: auto;" />
+                  <img src="images/ck/nav5.png" alt="ORB-SLAM3" style="width: 300px; height: auto;" />
+                </div>
 
 
               </div>
