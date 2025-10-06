@@ -760,18 +760,21 @@
                 <div class="card">
                   <div class="carousel">
                     <div class="carousel-inner">
+
                       <div class="carousel-slide active">
                         <video width="100%" controls muted>
                           <source src="images/ck/Deplacement.mp4" type="video/mp4">
                         </video>
                         <div class="carousel-caption">Mouvements élémentaires du robot</div>
                       </div>
+
                       <div class="carousel-slide">
                         <video width="100%" controls muted>
                           <source src="images/ck/Cartographie.mp4" type="video/mp4">
                         </video>
                         <div class="carousel-caption">Cartographie de l'environnement</div>
                       </div>
+
                       <div class="carousel-slide">
                         <video width="100%" controls muted>
                           <source src="images/ck/Navigation.mp4" type="video/mp4">
@@ -978,23 +981,27 @@
             <div class="carousel">
               <div class="carousel-inner">
                 <div class="carousel-slide active">
-                  <img src="images/bol/assemblage1.png" alt="Bol vibrant" />
+                  <video width="100%" controls muted>
+                    <source src="images/bol/lame+motoreductuer1.mp4" type="video/mp4">
+                  </video>
+                  <div class="carousel-caption">Prototype de ressort à lames avec motoreducteur.</div>
+                </div>
+
+                <div class="carousel-slide">
+                  <video width="100%" controls muted>
+                    <source src="images/bol/ressort.MP4" type="video/mp4">
+                  </video>
                   <div class="carousel-caption">
-                    Modélisation 3D du prototype de bol.
+                    Prototype de bol à ressort et moteur à balourd.
                   </div>
                 </div>
 
                 <div class="carousel-slide">
-                  <img src="images/bol/bol1.png" alt="Bol vibrant" />
+                  <video width="100%" controls muted>
+                    <source src="images/bol/vidFin.mp4" type="video/mp4">
+                  </video>
                   <div class="carousel-caption">
-                    Modélisation 3D du prototype de bol.
-                  </div>
-                </div>
-
-                <div class="carousel-slide">
-                  <img src="images/bol/bol2.png" alt="Bol vibrant" />
-                  <div class="carousel-caption">
-                    Modélisation 3D du prototype de bol.
+                    Prototype du prototype final.
                   </div>
                 </div>
               </div>
@@ -1330,14 +1337,16 @@
                     Cette démarche a permis de développer une <span class="highlight">approche méthodique</span>
                     alliant théorie, simulation et validation expérimentale.
                   </p>
+                </div>
 
+                <div class="card">
                   <!-- Système d'onglets -->
-                <div class="tabs tabs-prototypes">
+                  <div class="tabs tabs-prototypes">
                     <div class="tab-buttons">
-                        <button class="tab-btn active" data-tab="bielle-manivelle">Bielle-manivelle</button>
-                        <button class="tab-btn" data-tab="levier-oscillant">Levier oscillant</button>
-                        <button class="tab-btn" data-tab="ressorts-helicoidaux">Ressorts hélicoïdaux</button>
-                        <button class="tab-btn" data-tab="conception-finale">Conception finale</button>
+                      <button class="tab-btn active" data-tab="bielle-manivelle">Bielle-manivelle</button>
+                      <button class="tab-btn" data-tab="levier-oscillant">Levier oscillant</button>
+                      <button class="tab-btn" data-tab="ressorts-helicoidaux">Ressorts hélicoïdaux</button>
+                      <button class="tab-btn" data-tab="conception-finale">Conception finale</button>
                     </div>
 
                     <!-- Contenu onglet Bielle-manivelle -->
@@ -1612,43 +1621,350 @@
 
                     <!-- Contenu onglet Conception finale -->
                     <div id="conception-finale" class="tab-content" style="display: none;">
-                      <h3>Conception finale</h3>
+                      <div class="card">
+                        <h2>Conception finale</h2>
 
-                      <p>
-                        Ces études approfondies ont permis de concevoir une <strong>première version aboutie</strong>
-                        d'un prototype de bol vibrant, potentiellement destiné à être installé en salle de mécatronique.
-                      </p>
+                        <p>
+                          Ces études approfondies ont permis de concevoir une <strong>première version aboutie</strong>
+                          d'un prototype de bol vibrant, potentiellement destiné à être installé en salle de
+                          mécatronique.
+                        </p>
 
-                      <div class="figure-container">
-                        <img src="images/bol/ressortlame1.png" alt="Prototype ressort à lames"
-                          style="width: 30%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
-                        <p class="figure-caption">Prototype final</p>
-                      </div>
-
-                      <div class="stats">
-                        <div class="stat-item">
-                          <div class="stat-number">3</div>
-                          <div class="stat-label">Prototypes testés</div>
-                        </div>
-                        <div class="stat-item">
-                          <div class="stat-number">70°</div>
-                          <div class="stat-label">Angle des lames</div>
-                        </div>
-                        <div class="stat-item">
-                          <div class="stat-number">10°</div>
-                          <div class="stat-label">Inclinaison rampe</div>
+                        <div class="figure-container">
+                          <img src="images/bol/ressortlame1.png" alt="Prototype ressort à lames"
+                            style="width: 30%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                          <p class="figure-caption">Prototype final</p>
                         </div>
                       </div>
+
+                      <div class="card">
+                        <h2>Dimensionnement et validation des ressorts à lames</h2>
+
+                        <p>
+                          Les ressorts à lames permettent au bol d'effectuer ses mouvements vibratoires. Ils ont été
+                          dimensionnés
+                          pour travailler à la fois en <strong>flexion et en torsion</strong>, sans déformation
+                          permanente dans le temps.
+                          La référence de conception fixe le déplacement suivant l'axe Z à <span class="highlight">1
+                            mm</span>.
+                        </p>
+
+                        <h3>Contraintes mécaniques et limite élastique</h3>
+
+                        <p>
+                          Pour atteindre ce déplacement, il est nécessaire d'appliquer une force uniforme sur le bol de
+                          <strong>175 N</strong>, ce qui génère une contrainte comprise entre :
+                        </p>
+
+                        <div class="type-card" style="padding: 20px; margin: 20px 0; text-align: center;">
+                          <p
+                            style="font-family: 'Courier New', monospace; font-size: 1.3em; font-weight: bold; margin: 10px 0;">
+                            200 ≤ σ ≤ 250 MPa
+                          </p>
+                        </div>
+
+                        <p>
+                          La limite élastique de l'acier choisi étant d'environ <strong>250 MPa</strong>, les lames
+                          restent
+                          dans le domaine élastique et peuvent travailler en torsion et en flexion sans risque de
+                          flambement.
+                        </p>
+
+                        <h3>Vérification de la contrainte en flexion</h3>
+
+                        <p>
+                          La contrainte maximale subie par le ressort lors de la flexion se calcule ainsi :
+                        </p>
+
+                        <div class="type-card" style="padding: 20px; margin: 20px 0;">
+                          <p
+                            style="font-family: 'Courier New', monospace; font-size: 1.2em; font-weight: bold; text-align: center; margin: 10px 0;">
+                            σ<sub>flexion</sub> = (6 × F × L) / (b × h²) ≤ σ<sub>admissible</sub>
+                          </p>
+                          <p style="text-align: center; color: #666; margin-top: 15px;">
+                            où F = force, L = longueur, b = largeur, h = épaisseur
+                          </p>
+                        </div>
+
+                        <div class="figure-container">
+                          <img src="chemin/vers/figure29.jpg" alt="Dimensions ressort à lame"
+                            style="width: 30%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                          <p class="figure-caption">Dimensions d'un ressort à lame (épaisseur 1 mm)</p>
+                        </div>
+
+                        <p>
+                          Avec les dimensions : L = 146 mm, b = 30 mm, h = 1 mm
+                        </p>
+
+                        <div class="type-card" style="padding: 20px; margin: 20px 0; text-align: center;">
+                          <p style="font-family: 'Courier New', monospace; font-size: 1.2em; font-weight: bold;">
+                            σ<sub>flexion</sub> = (6 × 175 × 0,146) / (0,03 × 0,001²) = 5,1 MPa
+                          </p>
+                          <p style="margin-top: 10px; color: #8a6236; font-weight: bold;">
+                            5,1 MPa ≪ 250 MPa ✓
+                          </p>
+                        </div>
+
+                        <h3>Force maximale admissible</h3>
+
+                        <p>
+                          La force maximale que le ressort peut supporter avant d'atteindre sa contrainte admissible :
+                        </p>
+
+                        <div class="type-card" style="padding: 20px; margin: 20px 0;">
+                          <p
+                            style="font-family: 'Courier New', monospace; font-size: 1.2em; font-weight: bold; text-align: center; margin: 10px 0;">
+                            F<sub>max</sub> = (b × h² × σ<sub>admissible</sub>) / (6 × L)
+                          </p>
+                          <p
+                            style="font-family: 'Courier New', monospace; font-size: 1.2em; font-weight: bold; text-align: center; margin-top: 15px;">
+                            F<sub>max</sub> = (0,03 × 0,001² × 250×10⁶) / (6 × 0,146) = 8 561 N
+                          </p>
+                        </div>
+
+                        <h3>Limite de déflexion</h3>
+
+                        <p>
+                          Pour éviter une déformation permanente, la déflexion maximale admissible est :
+                        </p>
+
+                        <div class="type-card" style="padding: 20px; margin: 20px 0; text-align: center;">
+                          <p style="font-family: 'Courier New', monospace; font-size: 1.1em; font-weight: bold;">
+                            s<sub>max</sub> ≤ (4 × L² / h) × (σ<sub>admissible</sub> / E)
+                          </p>
+                          <p style="color: #666; margin-top: 10px;">
+                            avec E = 200 000 MPa (module d'élasticité de l'acier)
+                          </p>
+                          <p
+                            style="font-family: 'Courier New', monospace; font-size: 1.2em; font-weight: bold; margin-top: 15px;">
+                            s<sub>max</sub> ≤ 10,7 mm
+                          </p>
+                        </div>
+
+                        <p>
+                          La déflexion réelle sous la force de 175 N est :
+                        </p>
+
+                        <div class="type-card" style="padding: 20px; margin: 20px 0; text-align: center;">
+                          <p style="font-family: 'Courier New', monospace; font-size: 1.1em; font-weight: bold;">
+                            s = (4 × L³ × F) / (b × h³ × E)
+                          </p>
+                          <p
+                            style="font-family: 'Courier New', monospace; font-size: 1.2em; font-weight: bold; margin-top: 15px; color: #8a6236;">
+                            s = 1,65 mm ≪ 10,7 mm ✓
+                          </p>
+                        </div>
+
+                        <div class="stats">
+                          <div class="stat-item">
+                            <div class="stat-number">175 N</div>
+                            <div class="stat-label">Force appliquée</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">5,1 MPa</div>
+                            <div class="stat-label">Contrainte réelle</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">1,65 mm</div>
+                            <div class="stat-label">Déflexion</div>
+                          </div>
+                        </div>
+
+                        <div class="type-card" style="padding: 25px; margin: 25px 0;">
+                          <h3>Importance de la torsion</h3>
+                          <p>
+                            Ces résultats sont obtenus en supposant une <strong>flexion simple</strong>. En réalité,
+                            les ressorts à lames subissent également des <span class="highlight">contraintes de
+                              torsion</span>,
+                            particulièrement importantes lorsque l'angle entre les ressorts et le bol augmente.
+                            Plus cet angle est grand, plus la torsion devient prédominante par rapport à la flexion.
+                          </p>
+                          <p style="margin-top: 15px;">
+                            C'est pourquoi les simulations réalisées avec <strong>CATIA V5</strong> fournissent des
+                            résultats
+                            plus précis et fiables, car elles prennent en compte ces effets de torsion. La torsion est
+                            souvent
+                            plus critique pour la résistance mécanique que la flexion, pouvant entraîner des
+                            déformations
+                            ou ruptures plus sévères. Une modélisation intégrant la torsion permet donc de mieux
+                            anticiper
+                            les contraintes réelles et d'optimiser la conception.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <h2>Conception du système final</h2>
+
+                        <p>
+                          Le bol vibrant étant destiné à une <strong>installation physique en salle de
+                            mécatronique</strong>,
+                          la conception a intégré dès le départ les contraintes d'espace, de stabilité et d'utilisation
+                          pratique.
+                        </p>
+
+                        <p>
+                          Le support est conçu comme une <strong>table en profilé aluminium</strong> avec une plaque en
+                          plexiglas,
+                          maintenue par quatre pieds robustes. Cette structure garantit :
+                        </p>
+
+                        <ul class="tech-list">
+                          <li>
+                            <strong>Stabilité optimale</strong>
+                            Les quatre pieds assurent une assise solide pour absorber les vibrations sans transmission
+                            parasite.
+                          </li>
+                          <li>
+                            <strong>Mobilité facilitée</strong>
+                            La structure peut être déplacée facilement si nécessaire pour réorganiser l'espace de
+                            travail.
+                          </li>
+                          <li>
+                            <strong>Polyvalence</strong>
+                            Le design combine solidité et praticité pour un usage pédagogique et expérimental.
+                          </li>
+                        </ul>
+
+                        <h3>Conception du bol final</h3>
+
+                        <div class="figure-container">
+                          <div class="type-card">
+                            <img src="images/bol/non2.PNG" alt="Bol final"
+                              style="width: 60%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                            <p class="figure-caption">Modélisation CAO du bol final</p>
+                          </div>
+                        </div>
+
+                        <p>
+                          Le design final s'inspire du prototype à ressorts à lames en conservant les éléments clés
+                          (cuve cylindrique, lames et levier), tout en apportant des <span
+                            class="highlight">améliorations
+                            significatives</span> :
+                        </p>
+
+                        <div class="types-grid">
+                          <div class="type-card" style="padding: 25px;">
+                            <h3>Supports optimisés</h3>
+                            <p>Les fixations des lames ont été redessinées en <strong>tôle pliée</strong> pour une
+                              meilleure
+                              résistance mécanique et une fabrication simplifiée.</p>
+                          </div>
+                          <div class="type-card" style="padding: 25px;">
+                            <h3>Système de réglage</h3>
+                            <p>Un <strong>mécanisme coulissant</strong> permet l'ajustement précis de la position du
+                              moteur
+                              et de la came pour optimiser le fonctionnement.</p>
+                          </div>
+                        </div>
+
+                        <h3>Système de réglage coulissant</h3>
+
+                        <p>
+                          Pour permettre un ajustement précis du moteur, un système de <strong>trous oblongs</strong>
+                          a été intégré sur trois axes, offrant une flexibilité complète de positionnement :
+                        </p>
+
+                        <div class="type-card" style="padding: 20px; margin: 20px 0;">
+                          <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 10px 0; border-bottom: 1px solid #e0e0e0;">
+                              <strong style="color: #8a6236;">Axe X :</strong> Ajustement latéral du moteur
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #e0e0e0;">
+                              <strong style="color: #8a6236;">Axe Y :</strong> Déplacement longitudinal via le support
+                              moteur
+                            </li>
+                            <li style="padding: 10px 0;">
+                              <strong style="color: #8a6236;">Axe Z :</strong> Ajustement vertical pour optimiser le
+                              contact came-levier
+                            </li>
+                          </ul>
+                        </div>
+
+                        <p>
+                          Ce système de réglage tri-axial permet d'<strong>optimiser finement</strong> les vibrations et
+                          le mouvement
+                          des pièces. Le support moteur repose sur quatre rails garantissant la stabilité, et une fois
+                          le
+                          positionnement
+                          optimal trouvé, l'ensemble est solidement fixé par visserie pour éviter tout déplacement
+                          involontaire.
+                        </p>
+
+                        <div class="stats">
+                          <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Axes de réglage</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Rails de guidage</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Modularité</div>
+                          </div>
+                        </div>
+
+                      </div>
+
+
                     </div>
                   </div>
                 </div>
-              </div> 
 
-              <div class="tab-content " id="tab5">
-                <p>Contenu</p>
               </div>
 
 
+              <div class="tab-content " id="tab5">
+                <div class="card">
+                  <section class="conclusion">
+                    <h2>Conclusion</h2>
+                    <div class="types-grid">
+
+                      <div class="type-card">
+                        <h3>Bilan général</h3>
+                        <p>
+                          Le projet du <strong>bol vibrant</strong> nous a permis d’explorer et de tester différentes
+                          <strong>solutions techniques</strong>, tout en prenant en compte les contraintes pratiques et
+                          économiques.
+                        </p>
+                      </div>
+
+                      <div class="type-card">
+                        <h3>Approche et adaptation</h3>
+                        <p>
+                          Nous avons affiné notre approche pour obtenir un <strong>modèle final cohérent</strong>,
+                          en privilégiant des <strong>méthodes de fixation simples</strong> et efficaces, tout en
+                          restant attentifs aux détails.
+                        </p>
+                      </div>
+
+                      <div class="type-card">
+                        <h3>Esprit critique et innovation</h3>
+                        <p>
+                          L’inspiration des systèmes existants nous a permis de garder un <strong>esprit
+                            critique</strong> et
+                          de renforcer notre capacité à <strong>analyser et ajuster nos décisions</strong>.
+                        </p>
+                      </div>
+
+                      <div class="type-card">
+                        <h3>Compétences et apprentissages</h3>
+                        <p>
+                          Cette expérience a été une véritable <strong>opportunité d’apprentissage</strong>,
+                          de la modélisation à l’expérimentation, en passant par la réflexion critique et l’amélioration
+                          continue.
+                        </p>
+                      </div>
+
+                    </div>
+                  </section>
+
+                </div>
+
+              </div>
+            </div>
         </article>
 
         <!-- Projet 4 : Rayonnage -->

@@ -3658,13 +3658,12 @@ body.is-touch .poptrox-popup .closer {
 }
 
 .type-card {
-  background: linear-gradient(135deg, #f5f7fa 0%, #ebebeb 100%);
+  background: linear-gradient(135deg, #fefefe 0%, #f5f5f5 100%);
+  border-radius: 20px;
   padding: 25px;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .type-card:hover {
   transform: scale(1.05);
 }
