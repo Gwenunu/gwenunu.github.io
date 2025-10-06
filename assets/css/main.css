@@ -2602,7 +2602,7 @@ input[type="button"],
   background-color: transparent;
   border-radius: 0.35em;
   border: solid 3px #efefef;
-  color: #787878 !important;
+  color: #111111 !important;
   cursor: pointer;
   display: inline-block;
   font-weight: 400;
@@ -2745,7 +2745,7 @@ input[type="button"]:disabled,
   background-color: #131313;
   background-attachment: scroll, scroll;
   background-image: url("images/overlay.png"), url("../../images/6234465.jpg");
-  */ background-position: top left, top left;
+ /* background-position: top left, top left; */
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
   color: rgba(255, 255, 255, 0.5);
@@ -3054,7 +3054,7 @@ input[type="button"]:disabled,
   -webkit-transition: opacity 0.2s ease-in-out;
   -ms-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: rgba(150, 0, 0, 0);
   color: #fff;
   height: 4em;
   line-height: 4em;
@@ -3766,7 +3766,7 @@ body.is-touch .poptrox-popup .closer {
     text-align: center;
     margin: 30px 0;
     padding: 10px;
-    background: white
+    background: white;
     border-radius: 15px;
 }
 
@@ -3883,4 +3883,34 @@ body.is-touch .poptrox-popup .closer {
     font-style: italic;
     margin-top: 10px;
     text-align: center;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    background: #f5f7fa;
+    color: #666;
+    border: none;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    background: #8a6236;
+    color: white;
+}
+
+.tab-btn:hover {
+    background: #a07347;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
 }

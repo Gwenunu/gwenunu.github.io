@@ -1,7 +1,7 @@
 /*
-	Strata by HTML5 UP - Modifié avec pop-up améliorée et carrousel
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Strata by HTML5 UP - Modifié avec pop-up améliorée et carrousel
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 (function ($) {
@@ -63,8 +63,8 @@
         $header.css(
           "background-position",
           "left " +
-            -1 * (parseInt($window.scrollTop()) / settings.parallaxFactor) +
-            "px"
+          -1 * (parseInt($window.scrollTop()) / settings.parallaxFactor) +
+          "px"
         );
       });
     });
@@ -151,19 +151,18 @@
   // Système d'onglets
   function initTabs(container) {
     var $container = $(container);
-    var $tabs = $container.find(".tab-btn");
-    var $contents = $container.find(".tab-content");
+    var $tabs = $container.find("> .tab-buttons .tab-btn");
+    var $contents = $container.find("> .tab-content");
 
-    $tabs.on("click", function () {
+    $tabs.on("click", function (e) {
+      e.stopPropagation();
       var tabId = $(this).data("tab");
 
-      // Désactiver tous
       $tabs.removeClass("active");
-      $contents.removeClass("active");
+      $contents.removeClass("active").hide();
 
-      // Activer le clic
       $(this).addClass("active");
-      $container.find("#" + tabId).addClass("active");
+      $container.find("> #" + tabId).addClass("active").show();
     });
   }
 
@@ -218,7 +217,7 @@
         border: "none",
         fontSize: "40px",
         cursor: "pointer",
-        color: "#333",
+        color: "#ffffffff",
         zIndex: 1,
         lineHeight: "30px",
         width: "40px",
@@ -333,4 +332,5 @@
       }
     });
   });
+
 })(jQuery);
