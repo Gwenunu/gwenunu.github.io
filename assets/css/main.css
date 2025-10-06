@@ -3666,6 +3666,13 @@ body.is-touch .poptrox-popup .closer {
   margin-bottom: 8px;
 }
 
+.highlight {
+  background: linear-gradient(120deg, rgba(226, 105, 25, 0.2) 0%, rgba(255, 210, 183, 0.2) 100%);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
 .stats {
   display: flex;
   justify-content: space-around;
