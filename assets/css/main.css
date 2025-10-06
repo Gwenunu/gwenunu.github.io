@@ -2494,6 +2494,41 @@ ul.actions.fit.stacked {
   display: block;
 }
 
+/* Styles pour les sous-onglets des prototypes */
+.tabs-prototypes .tab-btn {
+    padding: 10px 16px;
+    background: transparent;
+    color: #666;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.tabs-prototypes .tab-btn:hover {
+    background: rgba(138, 98, 54, 0.1);
+    color: #8a6236;
+}
+
+.tabs-prototypes .tab-btn.active {
+    background: white;
+    color: #8a6236;
+    border: 2px solid #8a6236;
+    box-shadow: 0 2px 8px rgba(138, 98, 54, 0.2);
+}
+
+.tabs-prototypes .tab-buttons {
+    display: flex;
+    gap: 5px;
+    margin: 30px 0 20px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8e8e8 100%);
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
 
 /* Animation */
 @keyframes fadeIn {
