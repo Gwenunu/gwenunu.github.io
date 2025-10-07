@@ -237,7 +237,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #8a6236;
+  color: #61368a;
   font-weight: 400;
   line-height: 1em;
   margin: 0 0 1em 0;
@@ -256,21 +256,37 @@ h6 a {
 h1 {
   font-size: 2em;
   line-height: 1.5em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1:hover {
+  text-shadow: 2px 2px 4px #61368a88, 5px 5px 5px rgba(0,0,0,0.25);
 }
 
 h2 {
   font-size: 1.5em;
   line-height: 1.5em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+h2:hover {
+  text-shadow: 2px 2px 4px #61368a88, 5px 5px 5px rgba(0,0,0,0.25);
 }
 
 h3 {
   font-size: 1.25em;
   line-height: 1.5em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+h3:hover {
+  text-shadow: 2px 2px 4px #61368a88, 5px 5px 5px rgba(0,0,0,0.25);
 }
 
 h4 {
   font-size: 1.1em;
   line-height: 1.5em;
+  font-family: 'Quicksand', sans-serif;
 }
 
 h5 {
@@ -1859,7 +1875,7 @@ article.special {
 }
 
 header p {
-  color: #ebe6ca;
+  color: #E0E0E0;
   position: relative;
   margin: 0 0 1.0em 0;
   text-align: auto;
@@ -1887,7 +1903,16 @@ header h6+p {
 }
 
 header.major h2 {
+  font-family: 'Quicksand', sans-serif;
   font-size: 2em;
+}
+
+header.major:hover h2 {
+  text-shadow: 2px 2px 4px #61368a88, 5px 5px 5px rgba(0,0,0,0.25);
+}
+
+header.major:hover h3 {
+  text-shadow: 2px 2px 4px #61368a88, 5px 5px 5px rgba(0,0,0,0.25);
 }
 
 /* Form */
@@ -2543,13 +2568,13 @@ ul.actions.fit.stacked {
 
 .tabs-prototypes .tab-btn:hover {
   background: rgba(138, 98, 54, 0.1);
-  color: #8a6236;
+  color: #61368a;
 }
 
 .tabs-prototypes .tab-btn.active {
   background: white;
-  color: #8a6236;
-  border: 2px solid #8a6236;
+  color: #61368a;
+  border: 2px solid #61368a;
   box-shadow: 0 2px 8px rgba(138, 98, 54, 0.2);
 }
 
@@ -2813,7 +2838,7 @@ input[type="button"]:disabled,
   justify-content: space-between;
   background-color: #131313;
   background-attachment: scroll, scroll;
-  background-image: url("images/overlay.png"), url("../../images/6234465.jpg");
+  background-image: url("images/overlay.png"), url("../../images/purple2.jpg");
   /* background-position: top left, top left; */
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
@@ -2849,7 +2874,7 @@ input[type="button"]:disabled,
 
 #header strong,
 #header b {
-  color: #ffffff;
+  color: #F3E5F5;
 }
 
 #header h2,
@@ -2870,6 +2895,14 @@ input[type="button"]:disabled,
 #header .image.avatar {
   margin: 0 0 1em 0;
   width: 6.25em;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25), 0 0 10px #61368a55;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#header .image.avatar:hover {
+  transform: scale(1.1) rotate(2deg); 
+  box-shadow: 0 12px 25px rgba(0,0,0,0.35), 0 0 20px #fffbe488;
 }
 
 /* Footer */
@@ -2918,10 +2951,26 @@ input[type="button"]:disabled,
 }
 
 #main>section {
-  border-top: solid 2px #efefef;
+  position: relative;
   margin: 4em 0 0 0;
   padding: 4em 0 0 0;
 }
+
+#main>section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #61368a, #cfb7cf);
+  transition: width 1.5s ease;
+}
+
+#main>section:hover::before {
+  width: 100%;
+}
+
 
 #main>section:first-child {
   border-top: 0;
@@ -3474,12 +3523,28 @@ body.is-touch .poptrox-popup .closer {
   }
 }
 
+.popup-title {
+  font-family: 'Quicksand', sans-serif;  
+  color: #FFFFFF;                        
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-size: clamp(1.5em, 5vw, 2em);     
+  text-shadow: 2px 2px 2px #61368a44, 4px 4px 4px rgba(0,0,0,0.15); 
+  transition: text-shadow 0.3s ease;    
+}
+
+.popup-title:hover {
+  text-shadow: 2px 2px 4px #cecece88, 5px 5px 5px rgba(0,0,0,0.1); 
+}
+
+
+
 .popup-content h1,
 .popup-content h2,
 .popup-content h3 {
   margin-top: 1.5em;
   margin-bottom: 0.5em;
-  color: #8a6236;
+  color: #61368a;
 }
 
 .popup-content h1:first-child {
@@ -3705,7 +3770,7 @@ body.is-touch .poptrox-popup .closer {
 }
 
 .type-card h3 {
-  color: #8a6236;
+  color: #61368a;
   margin-bottom: 15px;
   font-size: 1.5em;
 }
@@ -3720,7 +3785,7 @@ body.is-touch .poptrox-popup .closer {
   padding: 10px;
   padding-left: 20px;
   margin-bottom: 15px;
-  border-left: 4px solid #8a6236;
+  border-left: 4px solid #61368a;
   border-radius: 8px;
   transition: all 0.3s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -3732,14 +3797,14 @@ body.is-touch .poptrox-popup .closer {
 }
 
 .tech-list strong {
-  color: #8a6236;
+  color: #61368a;
   font-size: 1.2em;
   display: block;
   margin-bottom: 8px;
 }
 
 .highlight {
-  background: linear-gradient(120deg, rgba(226, 105, 25, 0.2) 0%, rgba(255, 210, 183, 0.2) 100%);
+  background: linear-gradient(120deg, #f0e0ff 0%, #e3caff 100%);
   padding: 2px 8px;
   border-radius: 4px;
   font-weight: 600;
@@ -3762,7 +3827,7 @@ body.is-touch .poptrox-popup .closer {
 .stat-number {
   font-size: 2em;
   font-weight: bold;
-  background: linear-gradient(135deg, #8a6236 0%, rgb(255, 210, 183) 100%);
+  background: linear-gradient(135deg, #61368a 0%, #F3E5F5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -3966,7 +4031,7 @@ body.is-touch .poptrox-popup .closer {
 
 .tab-btn {
   padding: 12px 24px;
-  background: #f5f7fa;
+  background: #ffffff;
   color: #666;
   border: none;
   border-radius: 8px 8px 0 0;
@@ -3976,13 +4041,13 @@ body.is-touch .poptrox-popup .closer {
 }
 
 .tab-btn.active {
-  background: #8a6236;
-  color: white;
+  background: #61368a;
+  color: #F3E5F5;
 }
 
 .tab-btn:hover {
-  background: #a07347;
-  color: white;
+  background: #F3E5F5;
+  color: #61368a;
 }
 
 .tab-content {
@@ -4001,11 +4066,11 @@ body.is-touch .poptrox-popup .closer {
   padding: 25px;
   margin: 20px 0;
   text-align: center;
-  border: 1px dashed #8a6236;
+  border: 1px dashed #61368a;
 }
 
 .grafcet-placeholder {
-  color: #8a6236;
+  color: #61368a;
   font-style: italic;
   margin: 30px 0;
 }
@@ -4020,7 +4085,7 @@ body.is-touch .poptrox-popup .closer {
 }
 
 .coordinate-table th {
-  background: #8a6236;
+  background: #61368a;
   color: white;
   padding: 15px;
   text-align: center;
@@ -4045,11 +4110,11 @@ body.is-touch .poptrox-popup .closer {
   border-radius: 15px;
   padding: 25px;
   margin: 20px 0;
-  border-left: 5px solid #8a6236;
+  border-left: 5px solid #61368a;
 }
 
 .function-title {
-  color: #8a6236;
+  color: #61368a;
   font-weight: bold;
   margin-bottom: 15px;
   font-size: 1.2em;
@@ -4068,7 +4133,7 @@ body.is-touch .poptrox-popup .closer {
 .grid-cell {
   aspect-ratio: 1;
   background: #f8f9fa;
-  border: 2px solid #8a6236;
+  border: 2px solid #61368a;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -4083,6 +4148,6 @@ body.is-touch .poptrox-popup .closer {
 }
 
 .grid-cell.filled {
-  background: linear-gradient(135deg, #8a6236 0%, #a07347 100%);
+  background: linear-gradient(135deg, #61368a 0%, #a07347 100%);
   color: white;
 }
