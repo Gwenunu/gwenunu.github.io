@@ -83,14 +83,14 @@
             <h1>
               Démonstrateur d'un fer à fileter le cuir chauffant à l'induction
             </h1>
-            <div class="figure-container">
-              <img src="images/isi/carteDev1.jpg" alt="Carte de développement"
-                style="width: 70%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
-              <p class="figure-caption">
-                Ensemble du démonstrateur incluant la carte de développement la carte de puissance et le fer à
-                fileter
-              </p>
-            </div>
+
+            <img src="images/isi/carteDev1.jpg" alt="Carte de développement"
+              style="width: 70%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+            <p class="figure-caption" style="text-align: center; color: white;">
+              Ensemble du démonstrateur incluant la carte de développement la carte de puissance et le fer à
+              fileter
+            </p>
+
 
             <h1 style="text-align: center; color: rgb(199, 85, 85);"> Pour des raisons de confidentialité, certaines
               sections ne sont pas détaillées. </h1>
@@ -978,7 +978,7 @@
 
 
             <!-- CARROUSEL D'IMAGES -->
-            <div class="carousel">
+            <div class="carousel" style="width: 50%; margin: 0 auto; margin-bottom: 20px;">
               <div class="carousel-inner">
                 <div class="carousel-slide active">
                   <video width="100%" controls muted>
@@ -1964,7 +1964,7 @@
 
               </div>
             </div>
-            
+
         </article>
 
         <!-- Projet 4 : Rayonnage -->
@@ -1974,25 +1974,70 @@
           </a>
           <h3>Automatisation d'une maquette de rayonnage</h3>
           <p>
-            Projet d'automatisation d'un système de rayonnage intelligent avec
-            gestion automatisée des stocks.
+            Projet d'automatisation d'un système de rayonnage avec
+            gestion automatisée des stocks sur automate Siemens.
           </p>
 
           <div id="popup-rayonnage" class="popup-data" style="display: none">
             <h1>Automatisation d'une maquette de rayonnage</h1>
 
-            <img src="images/rayonnage/maquette.png" alt="Maquette de rayonnage" />
+            <div class="carousel" style="width: 50%; margin: 0 auto; margin-bottom: 20px;">
+              <div class="carousel-inner">
+                <div class="video">
+                  <video width="60%" controls muted>
+                    <source src="images/rayonnage/demo.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
 
             <div class="tabs">
               <!-- Les boutons d'onglets -->
               <div class="tab-buttons">
-                <button class="tab-btn active" data-tab="tab1">Onglet</button>
+                <button class="tab-btn active" data-tab="tab1">Introduction</button>
+                <button class="tab-btn " data-tab="tab2">Programmation et développement</button>
+                <button class="tab-btn " data-tab="tab3">Conclusion</button>
               </div>
 
               <div class="tab-content active" id="tab1">
                 <p>Contenu</p>
               </div>
-            </div>
+
+              <div class="tab-content " id="tab2">
+                <div class="card">
+                  <!-- Système d'onglets -->
+                  <div class="tabs tabs-prototypes">
+                    <div class="tab-buttons">
+                      <button class="tab-btn active" data-tab="tab_1">Contenu1</button>
+                      <button class="tab-btn" data-tab="tab_2">Contenu2</button>
+                      <button class="tab-btn" data-tab="tab_3">Contenu3</button>
+                      <button class="tab-btn" data-tab="tab_4">Contenu4</button>
+                    </div>
+
+                    <div class="tab-content active" id="tab_1">
+                      <p>Contenu</p>
+                    </div>
+
+                    <div class="tab-content" id="tab_2">
+                      <p>Contenu</p>
+                    </div>
+
+                    <div class="tab-content" id="tab_3">
+                      <p>Contenu</p>
+                    </div>
+
+                    <div class="tab-content" id="tab_4">
+                      <p>Contenu</p>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-content " id="tab3">
+                <p>Contenu</p>
+              </div>
         </article>
 
         <!-- Projet 5 : IoT LoRaWAN -->

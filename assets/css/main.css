@@ -2457,28 +2457,54 @@ ul.actions.fit.stacked {
   }
 }
 
-/* Onglets */
+/* Conteneur principal */
 .tabs {
   width: 100%;
   max-width: 950px;
   margin: 0 auto;
+  padding: 0 15px; /* petit padding pour éviter que ça colle aux bords sur mobile */
+  box-sizing: border-box; /* pour que le padding soit inclus dans la largeur */
   z-index: 99;
 }
 
+/* Boutons d’onglets */
 .tab-buttons {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 10px;
   margin-bottom: 15px;
+  width: 100%;
+  position: relative; /* pour positionner la barre */
 }
 
+.tab-buttons::after {
+  content: "";
+  position: absolute;
+  bottom: 0px; /* légèrement sous les boutons */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #b0b0b0; /* couleur de la barre */
+  border-radius: 4px;
+}
+
+/* Style individuel */
 .tab-btn {
+  flex: 1 1 auto; /* les boutons s’adaptent automatiquement à la largeur disponible */
+  min-width: 120px; /* pour éviter qu’ils deviennent trop petits */
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   background: #d6d6d6;
   cursor: pointer;
   transition: background 0.3s;
+  text-align: center; /* pour un meilleur rendu si le texte se réduit */
+}
+
+/* Optionnel : effet sur hover */
+.tab-btn:hover {
+  background: #c2c2c2;
 }
 
 .tab-btn.active {
