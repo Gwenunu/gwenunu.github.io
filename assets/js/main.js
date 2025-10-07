@@ -147,6 +147,15 @@
     });
   }
 
+  document.addEventListener('DOMContentLoaded', function () {
+    const gridCells = document.querySelectorAll('.grid-cell');
+
+    gridCells.forEach((cell, index) => {
+      // Animation d'apparition séquentielle
+      cell.style.animation = `fadeInUp 0.5s ease ${index * 0.1}s both`;
+    });
+  });
+
   // Fonction pour gérer les onglets
   // Système d'onglets
   function initTabs(container) {

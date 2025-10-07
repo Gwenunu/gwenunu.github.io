@@ -471,7 +471,7 @@
           <a href="#" class="image fit thumb popup-trigger" data-popup-id="popup-robot">
             <img src="images/ck/robot.png" alt="" />
           </a>
-          <h2>Robot mobile autonome</h2>
+          <h3>Robot mobile autonome</h3>
           <p>
             Conception et programmation d'un prototype de robot mobile autonome capable de
             se localiser, cartographier son environnement et y naviguer de manière autonome.
@@ -1970,7 +1970,7 @@
         <!-- Projet 4 : Rayonnage -->
         <article class="col-6 col-12-xsmall work-item">
           <a href="#" class="image fit thumb popup-trigger" data-popup-id="popup-rayonnage">
-            <img src="images/rayonnage/maquette.png" alt="" />
+            <img src="images/rayonnage/fisher.png" alt="" />
           </a>
           <h3>Automatisation d'une maquette de rayonnage</h3>
           <p>
@@ -1981,12 +1981,13 @@
           <div id="popup-rayonnage" class="popup-data" style="display: none">
             <h1>Automatisation d'une maquette de rayonnage</h1>
 
-            <div class="carousel" style="width: 50%; margin: 0 auto; margin-bottom: 20px;">
+            <div class="carousel" style="width: 70%; margin: 0 auto; margin-bottom: 20px;">
               <div class="carousel-inner">
-                <div class="video">
-                  <video width="60%" controls muted>
+                <div class="carousel-slide active">
+                  <video width="100%" controls muted preload="none" loading="lazy">
                     <source src="images/rayonnage/demo.mp4" type="video/mp4">
                   </video>
+                  <div class="carousel-caption">Essai de la maquette</div>
                 </div>
               </div>
             </div>
@@ -1995,48 +1996,890 @@
               <!-- Les boutons d'onglets -->
               <div class="tab-buttons">
                 <button class="tab-btn active" data-tab="tab1">Introduction</button>
-                <button class="tab-btn " data-tab="tab2">Programmation et développement</button>
-                <button class="tab-btn " data-tab="tab3">Conclusion</button>
+                <button class="tab-btn " data-tab="tab2">Maquette de rayonnage haut</button>
+                <button class="tab-btn " data-tab="tab3">Programmation et développement</button>
+                <button class="tab-btn " data-tab="tab4">Conclusion</button>
               </div>
 
               <div class="tab-content active" id="tab1">
-                <p>Contenu</p>
+                <div class="card">
+                  <h2>Automatisation d'un rayonnage haut</h2>
+
+                  <h3>Contexte et objectifs</h3>
+
+                  <p>
+                    Notre formation pluridisciplinaire exige une <strong>maîtrise de l'automatisation des
+                      systèmes</strong>,
+                    compétence transversale essentielle quel que soit le domaine de spécialisation. Ce projet s'inscrit
+                    dans
+                    cette logique en permettant de travailler sur l'<span class="highlight">automatisation complète
+                      d'une
+                      maquette de rayonnage</span>, intégrant théorie et pratique.
+                  </p>
+
+                  <p>
+                    L'objectif était de <strong>simuler un environnement industriel</strong> en utilisant un automate
+                    Siemens
+                    couplé au logiciel TIA Portal, tout en développant une interface homme-machine (IHM) et en initiant
+                    une
+                    gestion des données via Node-RED.
+                  </p>
+
+                  <h3>Le rayonnage haut automatisé</h3>
+
+                  <p>
+                    Un rayonnage haut automatisé est un système conçu pour <strong>optimiser l'entreposage des
+                      marchandises</strong>
+                    en utilisant un minimum d'espace. Grâce à des actionneurs et automates, ce système permet
+                    d'automatiser
+                    les opérations de stockage et déstockage, améliorant ainsi :
+                  </p>
+
+                  <div class="types-grid">
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>Rapidité</h3>
+                      <p>Opérations de manutention accélérées par l'automatisation complète du processus.</p>
+                    </div>
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>Précision</h3>
+                      <p>Positionnement exact et traçabilité en temps réel des marchandises stockées.</p>
+                    </div>
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>Gestion optimisée</h3>
+                      <p>Intégration possible à un système ERP (Enterprise Resource Planning) pour un pilotage global.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p>
+                    Cette standardisation permet un <span class="highlight">degré d'automatisation élevé</span> et le
+                    rattachement à un système de gestion intégré pour une visibilité complète des stocks.
+                  </p>
+
+                  <h3>Matériel et logiciels utilisés</h3>
+
+                  <div class="types-grid">
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>Matériel</h3>
+                      <ul class="tech-list">
+
+                        <li style="display: flex; justify-content: space-between; align-items: center;">
+                          <div>
+                            <strong>Automate Siemens S7-1200</strong><br>
+                            Contrôleur logique programmable pour la gestion des automatismes
+                          </div>
+                          <img src="images/rayonnage/siemens.jpg" alt="Automate Siemens S7-1200"
+                            style="width: 80px; height: auto; margin-left: 10px;">
+                        </li>
+
+                        <li style="display: flex; justify-content: space-between; align-items: center;">
+                          <div>
+                            <strong>IHM Siemens KP7000 Basic Panel</strong>
+                            Interface tactile pour la supervision et le contrôle du système
+                          </div>
+                          <img src="images/rayonnage/ihmkp.jpg" alt="IHM Siemens KP7000 Basic Panel"
+                            style="width: 80px; height: auto; margin-left: 10px;">
+                        </li>
+
+                        <li style="display: flex; justify-content: space-between; align-items: center;">
+                          <div>
+                            <strong>Maquette Fischertechnik 24V</strong>
+                            Plateforme de rayonnage haut automatisé pour simulation industrielle
+                          </div>
+                          <img src="images/rayonnage/fisher.png"
+                            alt="Maquette Fischertechnik 24V Rayonnage haut automatisé"
+                            style="width: 80px; height: auto; margin-left: 10px;">
+                        </li>
+
+                        <li style="display: flex; justify-content: space-between; align-items: center;">
+                          <div>
+                            <strong>Raspberry Pi</strong>
+                            Carte de développement pour l'acquisition et le traitement de données
+                          </div>
+                          <img src="images/rayonnage/raspberry.png" alt="Raspeberry Pi"
+                            style="width: 80px; height: auto; margin-left: 10px;">
+                        </li>
+                      </ul>
+
+                    </div>
+
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>Logiciels</h3>
+                      <ul class="tech-list">
+
+                        <li style="display: flex; justify-content: space-between; align-items: center;">
+                          <div>
+                            <strong>TIA Portal V16</strong>
+                            Environnement de développement intégré Siemens pour la programmation de l'automate et la
+                            conception de l'IHM
+                          </div>
+                          <img src="images/rayonnage/tia.png" alt="TIA Portal V16"
+                            style="width: 80px; height: auto; margin-left: 10px;">
+                        </li>
+
+                        <li style="display: flex; justify-content: space-between; align-items: center;">
+                          <div>
+                            <strong>Node-RED</strong>
+                            Plateforme de développement pour la gestion des flux de données et la création de tableaux
+                            de
+                            bord
+                          </div>
+                          <img src="images/rayonnage/nr.png" alt="Node-RED"
+                            style="width: 80px; height: auto; margin-left: 10px;">
+                        </li>
+
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat-item">
+                      <div class="stat-number">4</div>
+                      <div class="stat-label">Équipements matériels</div>
+                    </div>
+                    <div class="stat-item">
+                      <div class="stat-number">2</div>
+                      <div class="stat-label">Plateformes logicielles</div>
+                    </div>
+                    <div class="stat-item">
+                      <div class="stat-number">100%</div>
+                      <div class="stat-label">Automatisation</div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div class="tab-content " id="tab2">
                 <div class="card">
-                  <!-- Système d'onglets -->
-                  <div class="tabs tabs-prototypes">
-                    <div class="tab-buttons">
-                      <button class="tab-btn active" data-tab="tab_1">Contenu1</button>
-                      <button class="tab-btn" data-tab="tab_2">Contenu2</button>
-                      <button class="tab-btn" data-tab="tab_3">Contenu3</button>
-                      <button class="tab-btn" data-tab="tab_4">Contenu4</button>
+                  <h2>Maquette de rayonnage automatisé</h2>
+
+                  <p>
+                    La maquette Fischertechnik simule un <strong>système complet de stockage et déstockage
+                      automatisé</strong>,
+                    structuré autour de trois zones fonctionnelles principales :
+                  </p>
+
+                  <div class="types-grid">
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>1. Rayonnage haut</h3>
+                      <p>Structure de stockage verticale optimisant l'utilisation de l'espace disponible.</p>
+                    </div>
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>2. Manutention à identification</h3>
+                      <p>Zone d'entrée équipée de capteurs pour l'enregistrement et la traçabilité des marchandises.</p>
+                    </div>
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>3. Gerbeur automatisé</h3>
+                      <p>Chariot élévateur autonome se déplaçant dans le couloir central entre les rangées.</p>
+                    </div>
+                    <div class="type-card" style="padding: 25px;">
+                      <div class="figure-container">
+                        <img src="images/rayonnage/maquette2.png" alt="Maquette rayonnage"
+                          style="width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                        <p class="figure-caption">Vue d'ensemble de la maquette Fischertechnik</p>
+                      </div>
                     </div>
 
-                    <div class="tab-content active" id="tab_1">
-                      <p>Contenu</p>
+                  </div>
+
+                  <h3>Principe de fonctionnement</h3>
+
+                  <p>
+                    Le système repose sur des <strong>gerbeurs automatisés</strong> (chariots élévateurs) qui se
+                    déplacent
+                    dans un couloir central situé entre deux rangées de rayonnage. Le processus suit une séquence
+                    logique :
+                  </p>
+
+                  <ul class="tech-list">
+                    <li>
+                      <strong>Identification en avant-zone</strong>
+                      Les marchandises arrivent dans une zone d'entrée où des capteurs les identifient et les
+                      enregistrent
+                      dans le système, garantissant une traçabilité complète avant stockage.
+                    </li>
+                    <li>
+                      <strong>Manutention mécanique</strong>
+                      Un système de convoyeurs et transporteurs déplace les marchandises identifiées vers les points
+                      de prise en charge des gerbeurs.
+                    </li>
+                    <li>
+                      <strong>Stockage et déstockage</strong>
+                      Les gerbeurs récupèrent les marchandises pour les placer dans les emplacements dédiés du
+                      rayonnage,
+                      ou inversement, les retirent pour les acheminer vers les étapes suivantes du processus.
+                    </li>
+                  </ul>
+
+                  <h3>Instrumentation et actionneurs</h3>
+
+                  <p>
+                    La maquette est équipée de <span class="highlight">capteurs (entrées I)</span> et
+                    <span class="highlight">moteurs (sorties Q)</span> qui constituent l'interface entre
+                    le système physique et l'automate programmable :
+                  </p>
+
+                  <div class="types-grid">
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>Capteurs (I)</h3>
+                      <p>Détection de position, présence de marchandises, fin de course, et identification optique
+                        pour le suivi en temps réel.</p>
                     </div>
-
-                    <div class="tab-content" id="tab_2">
-                      <p>Contenu</p>
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>Actionneurs (Q)</h3>
+                      <p>Moteurs de déplacement des gerbeurs, convoyeurs, systèmes d'élévation et mécanismes de
+                        préhension pour la manipulation.</p>
                     </div>
+                  </div>
 
-                    <div class="tab-content" id="tab_3">
-                      <p>Contenu</p>
+                  <div class="figure-container">
+                    <img src="images/rayonnage/io.png" alt="Variables I/O"
+                      style="width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                    <p class="figure-caption">Vue d'ensemble de la maquette Fischertechnik avec les variables I/O</p>
+                  </div>
+
+                  <div class="stats">
+                    <div class="stat-item">
+                      <div class="stat-number">3</div>
+                      <div class="stat-label">Zones fonctionnelles</div>
                     </div>
-
-                    <div class="tab-content" id="tab_4">
-                      <p>Contenu</p>
+                    <div class="stat-item">
+                      <div class="stat-number">24V</div>
+                      <div class="stat-label">Alimentation système</div>
                     </div>
-
-
+                    <div class="stat-item">
+                      <div class="stat-number">I/O</div>
+                      <div class="stat-label">Architecture capteurs/actionneurs</div>
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div class="tab-content " id="tab3">
-                <p>Contenu</p>
+                <div class="card">
+                  <!-- Système d'onglets -->
+                  <div class="tabs tabs-prototypes">
+                    <div class="tab-buttons">
+                      <button class="tab-btn active" data-tab="tab_1">Partie programmation</button>
+                      <button class="tab-btn" data-tab="tab_2">Stockage</button>
+                      <button class="tab-btn" data-tab="tab_3">Destockage</button>
+                      <button class="tab-btn" data-tab="tab_4">Fonctionnalités</button>
+                      <button class="tab-btn" data-tab="tab_5">IHM</button>
+                      <button class="tab-btn" data-tab="tab_6">Intégration du MES</button>
+                    </div>
+
+                    <div class="tab-content active" id="tab_1">
+                      <div class="card">
+                        <h2>Partie programmation</h2>
+                        <p>
+                          L’objectif principal de cette phase a été de comprendre le fonctionnement de la maquette de
+                          rayonnage automatisé.
+                          Cette étape a permis d’analyser le <span class="highlight">mécanisme de commande</span> et de
+                          concevoir une logique capable de gérer
+                          le <strong>stockage</strong> et le <strong>déstockage</strong> des pièces de manière fiable et
+                          reproductible.
+                        </p>
+                      </div>
+
+                      <div class="types-grid">
+                        <div class="type-card">
+                          <h>Programmation Ladder (LD)</h2>
+                            <p>
+                              Le <strong>Ladder Diagram</strong> a été utilisé pour ce projet.
+                              Il repose sur une représentation graphique de type électrique avec contacts et bobines,
+                              permettant de visualiser facilement les logiques de commande.
+                              Cette approche a facilité la conception des séquences automatiques et le diagnostic du
+                              système.
+                            </p>
+                            <div class="figure-container">
+                              <img src="images/rayonnage/exemple1.png" alt="Exemple de programme Ladder sur TIA Portal"
+                                class="figure-image">
+                              <p class="figure-caption">Exemple de réseau Ladder illustrant une condition de déplacement
+                                vertical.</p>
+                            </div>
+                        </div>
+
+                        <div class="type-card">
+                          <h3>High-Speed Counters (HSC)</h3>
+                          <p>
+                            Les moteurs sont équipés de <span class="highlight">codeurs incrémentaux</span> pour mesurer
+                            la position en temps réel.
+                            Deux compteurs rapides ont été configurés : l’un pour le mouvement vertical et l’autre pour
+                            le mouvement horizontal.
+                            Ils permettent de traiter les impulsions indépendamment du cycle principal de l’automate,
+                            assurant précision et synchronisation.
+                          </p>
+                          <div class="formula-box">
+                            <div class="formula">Déplacement = N<sub>impulsions</sub> × (1 / Résolution du codeur)</div>
+                            <div class="formula-legend">Formule simplifiée du calcul de position à partir d’un codeur
+                              incrémental</div>
+                          </div>
+                        </div>
+
+                        <div class="type-card">
+                          <h3>Optimisation du code</h3>
+                          <p>
+                            Après mise en place des séquences de base, le programme a été affiné pour intégrer des
+                            fonctionnalités avancées :
+                            <span class="highlight">gestion coordonnée des axes</span>, <span class="highlight">contrôle
+                              des erreurs</span> et exécution fluide des déplacements.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="stats">
+                          <div class="stat-item">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Compteurs rapides</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">Axes X/Z</div>
+                            <div class="stat-label">Mouvements synchronisés</div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="tab-content" id="tab_2">
+                      <div class="container">
+                        <div class="card">
+                          <h2>Architecture du système de Stockage</h2>
+                          <p>Le système de stockage repose sur une architecture modulaire intégrant <span
+                              class="highlight">capteurs, actionneurs et un automate programmable</span> pour gérer le
+                            positionnement et le suivi des pièces dans un espace de stockage défini.</p>
+
+                          <div class="stats">
+                            <div class="stat-item">
+                              <div class="stat-number">9</div>
+                              <div class="stat-label">Emplacements de stockage</div>
+                            </div>
+                            <div class="stat-item">
+                              <div class="stat-number">2</div>
+                              <div class="stat-label">Axes de positionnement</div>
+                            </div>
+                            <div class="stat-item">
+                              <div class="stat-number">100%</div>
+                              <div class="stat-label">Précision de positionnement</div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card">
+                          <h2>Grafcet de Fonctionnement</h2>
+                          <p>En ayant à disposition les différents capteurs et moteurs, on peut en déduire le Grafcet
+                            suivant :</p>
+
+                          <div class="figure-container">
+                            <img src="images/rayonnage/stockg7.png" alt="Grafcet de Fonctionnement"
+                              style="width: 40%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                            <p class="figure-caption">Grafcet de Fonctionnement</p>
+                          </div>
+
+                          <p>Ceci est une <span class="highlight">représentation simplifiée</span> du fonctionnement en
+                            mode stockage.</p>
+
+                          <div class="type-card">
+                            <div class="function-title">Fonction de Comptage et Positionnement</div>
+                            <p>De manière plus complexe, nous avons fait en sorte qu'à chaque cycle, un compteur
+                              s'incrémente afin de savoir où l'automate en est dans son cycle, ce qui lui permet de
+                              stocker les pièces à la suite jusqu'à avoir complété les 9 espaces de stockage.</p>
+
+                            <div class="figure-container">
+                              <img src="images/rayonnage/axestock.png" alt="emplacements de stockage disponibles"
+                                style="width: 75%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                              <p class="figure-caption">Emplacements de stockage disponibles</p>
+                            </div>
+
+                          </div>
+                        </div>
+
+                        <div class="card">
+                          <h2>Architecture des Emplacements de Stockage</h2>
+                          <p>Les programme Ladder ci-dessous montrent que pour chaque position suivant X et Y est
+                            associé une
+                            valeur de compteur. Par exemple, pour le 3e cycle, soit pour un numéro d’incrémentation
+                            valant 2, la position en X est de 1900 et la position en Y est de 50.
+                            Une fonction dédiée à ce comptage a été créée. </p>
+                          <div class="figure-container">
+                            <img src="images/rayonnage/position.png" alt="Position suivant X et Y"
+                              style="width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                            <p class="figure-caption">Position suivant X et Y</p>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="tab-content" id="tab_3">
+                      <div class="card">
+                        <h2>Système de Déstockage</h2>
+                        <p>Le déstockage fonctionne selon le <span class="highlight">même principe fondamental</span>
+                          que le stockage, mais en sens inverse. Au lieu d'incrémenter le compteur à chaque cycle,
+                          celui-ci <strong>décrémente automatiquement</strong> dès qu'une pièce est retirée du système.
+                        </p>
+
+                        <div class="stats">
+                          <div class="stat-item">
+                            <div class="stat-number">9→0</div>
+                            <div class="stat-label">Séquence de déstockage</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">-1</div>
+                            <div class="stat-label">Décrémentation par cycle</div>
+                          </div>
+                        </div>
+
+                        <div class="figure-container">
+                          <img src="images/rayonnage/destrockg7.png" alt="Grafcet de Fonctionnement"
+                            style="width: 40%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                          <p class="figure-caption">Grafcet de Fonctionnement</p>
+                        </div>
+
+
+                        <div class="function-box">
+                          <div class="function-title">Réutilisation de la Fonction de Comptage</div>
+                          <p>Le déstockage utilise la <span class="highlight">même fonction de comptage</span> que
+                            précédemment, garantissant une cohérence parfaite entre les deux modes opératoires.</p>
+                          <div class="figure-container">
+                            <img src="images/rayonnage/decrementation.png" alt="Decrementation du cycle"
+                              style="width: 70%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                            <p class="figure-caption">Decrementation du cycle</p>
+                          </div>
+                        </div>
+
+                        <div class="types-grid">
+                          <div class="type-card">
+                            <h3>Architecture symétrique</h3>
+                            <p>Le système maintient la même logique de positionnement, inversant uniquement le sens de
+                              progression du compteur</p>
+                          </div>
+                          <div class="type-card">
+                            <h3>Gestion des limites</h3>
+                            <p>Arrêt automatique lorsque le compteur atteint la valeur minimale (0)</p>
+                          </div>
+                        </div>
+
+                        <p>Cette approche démontre la robustesse de l'architecture
+                          initiale, capable de gérer les deux modes de fonctionnement avec un minimum
+                          d'ajustements.</p>
+                      </div>
+                    </div>
+
+                    <div class="tab-content" id="tab_4">
+                      <div class="card">
+                        <h2>Modes de fonctionnement</h2>
+                        <p>
+                          Le programme a été structuré pour permettre une interaction avec l'IHM et offrir le choix du
+                          mode de fonctionnement. Les modes disponibles sont :
+                        </p>
+
+                        <div class="types-grid">
+                          <div class="type-card">
+                            <h3>Mode automatique</h3>
+                            <p>
+                              Dans ce mode, les séquences de chargement et de stockage se déclenchent automatiquement
+                              selon des conditions définies,
+                              notamment l’état du compteur dans le bloc Historian.
+                              Cela permet une gestion fluide et autonome du rayonnage, sans intervention humaine.
+                            </p>
+
+                            <div class="figure-container"
+                              style="display: flex; justify-content: space-between; gap: 20px;">
+                              <div style="flex: 1; text-align: center;">
+                                <img src="images/rayonnage/autoùatiqueg7.png"
+                                  alt="Grafcet simplifié du mode automatique"
+                                  style="width: 100%; height: auto; border-radius: 12px;">
+                                <p class="figure-caption">Grafcet simplifié du mode automatique</p>
+                              </div>
+
+                              <div style="flex: 1; text-align: center;">
+                                <img src="images/rayonnage/automladder.png" alt="Positions de stockage"
+                                  style="width: 100%; height: auto; border-radius: 12px;">
+                                <p class="figure-caption">Programme ladder du mode automatique</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="type-card">
+                            <h3>Mode manuel</h3>
+                            <p>
+                              L’opérateur peut choisir manuellement l’emplacement de stockage ou de déstockage via
+                              l’IHM.
+                              Ce mode facilite les interventions ponctuelles et les ajustements, avec un contrôle
+                              des déplacements en ligne et en colonne.
+                              Une fonction de mémorisation a été conçue pour conserver le dernier emplacement et
+                              déterminer la direction du gerbeur, bien que cette fonction reste un prototype.
+                            </p>
+
+                            <div class="figure-container"
+                              style="display: flex; justify-content: space-between; gap: 20px;">
+                              <div style="flex: 1; text-align: center;">
+                                <img src="images/rayonnage/manuelg7.png" alt="Grafcet simplifié du mode manuel"
+                                  style="width: 100%; height: auto; border-radius: 12px;">
+                                <p class="figure-caption">Grafcet simplifié du mode manuel</p>
+                              </div>
+
+                              <div style="flex: 1; text-align: center;">
+                                <img src="images/rayonnage/manuelladder1.png" alt="Programme ladder : Déplacement pour aller vers l'emplacement
+                                  haut, gauche" style="width: 100%; height: auto; border-radius: 12px;">
+                                <p class="figure-caption">Programme ladder : Déplacement pour aller vers l'emplacement
+                                  haut, gauche</p>
+                              </div>
+
+                              <div style="flex: 1; text-align: center;">
+                                <img src="images/rayonnage/manuelladder2.png"
+                                  alt="Programme ladder : Déplacement pour les lignes"
+                                  style="width: 100%; height: auto; border-radius: 12px;">
+                                <p class="figure-caption">Programme ladder : Déplacement pour les lignes</p>
+                              </div>
+
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div class="card">
+                          <h2>Initialisation</h2>
+                          <p>
+                            Une fonction d’initialisation a été développée afin de garantir que le programme démarre
+                            dans
+                            un état stable, prédictible et sécurisé.
+                            Lors du lancement, le cantilever est en position rentrée (à l’arrière) et le gerbeur se
+                            trouve
+                            complètement à droite, prêt à charger une pièce.
+                            Cette étape assure la préparation optimale du système avant l’exécution des séquences
+                            automatiques.
+
+                          <div class="figure-container"
+                            style="display: flex; justify-content: space-between; gap: 20px;">
+                            <div style="flex: 1; text-align: center;">
+                              <img src="images/rayonnage/initg7.png" alt="Grafcet simplifié de l'initialisation"
+                                style="width: 100%; height: auto; border-radius: 12px;">
+                              <p class="figure-caption">Grafcet simplifié de l'initialisation</p>
+                            </div>
+
+                            <div style="flex: 1; text-align: center;">
+                              <img src="images/rayonnage/initladder.png" alt="Programme ladder de l'initialisation"
+                                style="width: 100%; height: auto; border-radius: 12px;">
+                              <p class="figure-caption">Programme ladder de l'initialisation</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      </p>
+
+
+                      <div class="card">
+                        <h2>Arrêt d’urgence</h2>
+                        <p>
+                          L’arrêt d’urgence est un élément de sécurité essentiel sur tous les systèmes automatisés.
+                          Dans notre maquette, il est représenté par un bouton rouge sur l’IHM, facilement accessible à
+                          l’opérateur.
+                        </p>
+
+                        <div class="types-grid">
+                          <div class="type-card">
+                            <h3>Fonctionnement</h3>
+                            <p>
+                              L’appui sur le bouton désactive immédiatement toutes les sorties du programme,
+                              garantissant un arrêt rapide et sécurisé des actionneurs.
+                            </p>
+                          </div>
+
+                          <div class="type-card">
+                            <h3>Importance</h3>
+                            <p>
+                              Cette fonctionnalité permet de prévenir tout risque lié aux mouvements du gerbeur ou du
+                              cantilever, assurant la sécurité de l’opérateur et la protection du matériel.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="figure-container" style="display: flex; justify-content: space-between; gap: 20px;">
+                          <img src="images/rayonnage/aug7.png" alt="Grafcet simplifié de l'arrêt d'urgence"
+                            style="width: 50%; height: auto; border-radius: 12px;">
+                          <p class="figure-caption">Grafcet simplifié de l'arrêt d'urgence</p>
+                        </div>
+                      </div>
+
+
+                      <div class="card">
+                        <h2>Points clés</h2>
+                        <div class="stats">
+                          <div class="stat-item">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Modes de fonctionnement</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">1</div>
+                            <div class="stat-label">Fonction d’initialisation</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">✔</div>
+                            <div class="stat-label">Arrêt d’urgence opérationnel</div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                    </div>
+
+                    <div class="tab-content" id="tab_5">
+                      <div class="card">
+                        <h2>Partie IHM</h2>
+                        <p>
+                          L’<strong>IHM</strong> (Interface Homme-Machine) désigne un tableau de bord permettant à un
+                          utilisateur
+                          de communiquer avec une machine ou un système. Dans un contexte industriel, l’IHM affiche des
+                          données en temps réel
+                          et permet de contrôler les opérations grâce à une interface graphique intuitive.
+                        </p>
+                      </div>
+
+                      <div class="types-grid">
+                        <div class="type-card">
+                          <h3>Visualisation des données</h3>
+                          <p>
+                            L’IHM permet aux opérateurs de suivre les informations importantes sous forme de <span
+                              class="highlight">graphiques, tableaux de bord et indicateurs visuels</span>.
+                            Cela offre une vue d’ensemble claire et en temps réel du fonctionnement du système.
+                          </p>
+                        </div>
+
+                        <div class="type-card">
+                          <h3>Connexion SCADA / MES</h3>
+                          <p>
+                            L’interface peut se connecter aux systèmes de supervision (SCADA) et de gestion (MES),
+                            permettant de suivre et de contrôler l’ensemble des processus industriels depuis un point
+                            central.
+                          </p>
+                        </div>
+
+                        <div class="type-card">
+                          <h3>Communication avec les automates</h3>
+                          <p>
+                            L’IHM communique avec les automates programmables (<strong>PLC</strong>) pour récupérer les
+                            données et envoyer des commandes,
+                            assurant un contrôle précis et fiable des opérations.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <h2>Conception de notre IHM</h2>
+                        <p>
+                          Nous avons développé une interface sobre, intuitive et efficace, centrée sur la facilité
+                          d’utilisation :
+                          <span class="highlight">palette de couleurs gris/turquoise</span> pour réduire la fatigue
+                          visuelle,
+                          boutons espacés pour une interaction ergonomique, même sur écran tactile.
+                          L’IHM centralise toutes les fonctionnalités essentielles à la gestion du rayonnage,
+                          tout en intégrant un <strong>arrêt d’urgence</strong> pour garantir la sécurité maximale.
+                        </p>
+                      </div>
+                      <div class="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-slide active">
+                            <img src="images/rayonnage/ihmACCEUIL.png" alt="Vue initiale de l'IHM" />
+                            <div class="carousel-caption">Vue initiale de l'IHM</div>
+                          </div>
+
+                          <div class="carousel-slide">
+                            <img src="images/rayonnage/ihmINFO.png" alt="Vue des informations" />
+                            <div class="carousel-caption">Vue des informations</div>
+                          </div>
+
+                          <div class="carousel-slide">
+                            <img src="images/rayonnage/ihmAUTO.png" alt="Vue Automatique" />
+                            <div class="carousel-caption">Vue "Automatique"</div>
+                          </div>
+
+                          <div class="carousel-slide">
+                            <img src="images/rayonnage/ihmMANUEL.png" alt="Vue Manuel" />
+                            <div class="carousel-caption">Vue "Manuel"</div>
+                          </div>
+
+                          <div class="carousel-slide">
+                            <img src="images/rayonnage/ihmMOTEUR.png" alt="Vue de la gestion des moteurs" />
+                            <div class="carousel-caption">Vue de la gestion des moteurs</div>
+                          </div>
+                        </div>
+
+                        <!-- Boutons de navigation -->
+                        <button class="carousel-prev">❮</button>
+                        <button class="carousel-next">❯</button>
+
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                          <button class="carousel-indicator active"></button>
+                          <button class="carousel-indicator"></button>
+                          <button class="carousel-indicator"></button>
+                          <button class="carousel-indicator"></button>
+                          <button class="carousel-indicator"></button>
+                        </div>
+                      </div>
+
+
+                    </div>
+
+                    <div class="tab-content" id="tab_6">
+                      <div class="card">
+                        <h2>Node-RED & MES</h2>
+                        <p>
+                          Node-RED est un outil de programmation visuel permettant de connecter des dispositifs
+                          matériels, des API et des services en ligne de manière intuitive.
+                          Il offre un éditeur accessible depuis un navigateur web et permet de concevoir des flux de
+                          données simples à déployer en temps réel.
+                        </p>
+                      </div>
+
+                      <div class="types-grid">
+                        <div class="type-card">
+                          <h3>Historian</h3>
+                          <p>
+                            L’historian collecte et archive toutes les données de processus provenant de l’automate,
+                            telles que le temps de cycle ou le nombre d’éléments en stock.
+                          </p>
+                        </div>
+
+                        <div class="type-card">
+                          <h3>MES</h3>
+                          <p>
+                            Le MES (Manufacturing Execution System) surveille, documente et contrôle le processus de
+                            production, fournissant aux décideurs des informations pour optimiser l’atelier.
+                          </p>
+                        </div>
+
+                        <div class="type-card">
+                          <h3>Notre utilisation</h3>
+                          <p>
+                            Pour ce projet, Node-RED a été utilisé principalement pour la supervision MES.
+                            Il permet de :
+                          <ul>
+                            <li>Analyser le nombre d’éléments en stock</li>
+                            <li>Mesurer le temps de cycle pour les opérations de stockage et déstockage</li>
+                          </ul>
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <h2>Fonctionnement simplifié</h2>
+                        <p>
+                          Les données sont récupérées depuis l’automate via des blocs de données (DataBlocks).
+                          Les temps de cycle sont calculés à partir de l’heure de début et de fin de chaque opération,
+                          puis convertis en un format lisible pour l’affichage dans Node-RED.
+                        </p>
+                        <p>
+                          Les nœuds Node-RED sont utilisés pour :
+                        <ul>
+                          <li>Lire les variables de l’automate</li>
+                          <li>Convertir et formater les temps de cycle</li>
+                          <li>Afficher les informations de manière claire pour le suivi de production</li>
+                          <li>Stocker les valeurs dans des tableaux pour une analyse rapide</li>
+                        </ul>
+                        </p>
+                      </div>
+
+                      <div class="figure-container" style="display: flex; justify-content: space-between; gap: 20px;">
+                        <div style="flex: 1; text-align: center;">
+                          <img src="images/rayonnage/fluxNodeRed.png" alt="Flux Node-RED"
+                            style="width: 100%; height: auto; border-radius: 12px;">
+                          <p class="figure-caption">Configuration Node-RED</p>
+                        </div>
+
+                        <div style="flex: 1; text-align: center;">
+                          <img src="images/rayonnage/nodered2.png" alt="Dashboard MES"
+                            style="width: 100%; height: auto; border-radius: 12px;">
+                          <p class="figure-caption">Dashboard MES</p>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <h2>Points clés</h2>
+                        <div class="stats">
+                          <div class="stat-item">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Outils utilisés</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">✔</div>
+                            <div class="stat-label">Supervision MES opérationnelle</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">⚡</div>
+                            <div class="stat-label">Analyse de performance simplifiée</div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-content " id="tab4">
+                <div class="card">
+                  <h2>Conclusion</h2>
+                  <div class="types-grid" style="margin-top: 20px;">
+                    <div class="type-card">
+                      <h3>Immersion concrète</h3>
+                      <p>
+                        Ce projet nous a permis de <span class="highlight">transformer nos connaissances théoriques en
+                          réalisations tangibles</span>,
+                        visualisant physiquement l’impact de nos GRAFCETs et lignes de code.
+                      </p>
+                    </div>
+                    <div class="type-card">
+                      <h3>Compétences techniques</h3>
+                      <p>
+                        Nous avons exploré les outils Siemens en profondeur :
+                        <span class="highlight">compteurs, Ladder, IHM ergonomique</span> et intégration MES via
+                        Node-RED.
+                      </p>
+                    </div>
+                    <div class="type-card">
+                      <h3>Collaboration & autonomie</h3>
+                      <p>
+                        Le travail parallèle sur l’IHM et la programmation a renforcé notre <span
+                          class="highlight">autonomie et esprit d’équipe</span>,
+                        tout en nous confrontant à la réalité d’un projet industriel.
+                      </p>
+                    </div>
+                    <div class="type-card">
+                      <h3>Analyse & supervision</h3>
+                      <p>
+                        L’utilisation du MES a ajouté une dimension analytique, permettant de <span
+                          class="highlight">superviser et exploiter les données</span> en temps réel pour améliorer la
+                        performance.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <h3 style="margin-top: 30px; text-align: center;">Points clés du projet</h3>
+                  <div class="stats">
+                    <div class="stat-item">
+                      <div class="stat-number">✔</div>
+                      <div class="stat-label">Compétences techniques renforcées</div>
+                    </div>
+                    <div class="stat-item">
+                      <div class="stat-number">3</div>
+                      <div class="stat-label">Axes principaux : Programmation, IHM, Node-RED</div>
+                    </div>
+                    <div class="stat-item">
+                      <div class="stat-number">⚡</div>
+                      <div class="stat-label">Expérience collaborative et concrète</div>
+                    </div>
+                    <div class="stat-item">
+                      <div class="stat-number">🌟</div>
+                      <div class="stat-label">Compréhension globale de l’automatisation</div>
+                    </div>
+                  </div>
+                </div>
               </div>
         </article>
 
