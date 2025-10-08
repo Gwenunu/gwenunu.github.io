@@ -2897,87 +2897,608 @@
           <div id="popup-iot" class="popup-data" style="display: none">
             <div class="popup-title">Système IoT LoRaWAN de classification d'images par IA</div>
 
-            <div class="image-container">
-              <img src="images/iot/IU-lora.png" alt="Interface utilisateur LoRa" />
+            <div class="carousel" style="width: 50%; margin: 0 auto;">
+              <div class="carousel-inner">
+                <div class="carousel-slide active">
+                  <img src="images/iot/IU-lora.png" alt="LoRa" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/iot/helium.png" alt="Helium" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/iot/tago.png" alt="TagoIO" />
+                </div>
+              </div>
+              <button class="carousel-prev">❮</button>
+              <button class="carousel-next">❯</button>
+              <div class="carousel-indicators">
+                <button class="carousel-indicator active"></button>
+                <button class="carousel-indicator"></button>
+                <button class="carousel-indicator"></button>
+              </div>
             </div>
 
             <div class="tabs">
               <!-- Les boutons d'onglets -->
               <div class="tab-buttons">
-                <button class="tab-btn active" data-tab="tab1">Introduction</button>
-                <button class="tab-btn" data-tab="tab2">Contexte et objectifs</button>
-                <button class="tab-btn" data-tab="tab3">Matériel et préparation</button>
-                <button class="tab-btn" data-tab="tab4">Classification d'images avec IA embarquée</button>
-                <button class="tab-btn" data-tab="tab5">Conclusion</button>
+                <button class="tab-btn active" data-tab="tab1">Contexte et objectifs</button>
+                <button class="tab-btn" data-tab="tab2">Matériel et préparation</button>
+                <button class="tab-btn" data-tab="tab3">Classification d'images avec IA embarquée</button>
+                <button class="tab-btn" data-tab="tab4">Conclusion</button>
               </div>
 
               <div class="tab-content active" id="tab1">
-                <p>Contenu</p>
+                <div class="card">
+                  <h2>Contexte et objectifs</h2>
+
+                  <p>
+                    Ce projet explore la mise en place d'un <strong>système de classification d'images basé sur
+                      l'IA</strong>
+                    en utilisant le Seeed Wio Terminal et la caméra Grove AI. L'objectif était de développer une
+                    solution
+                    complète intégrant <span class="highlight">vision par ordinateur</span>,
+                    <span class="highlight">classification en temps réel</span> et
+                    <span class="highlight">transmission IoT</span> des résultats via LoRaWAN.
+                  </p>
+                </div>
               </div>
 
               <div class="tab-content " id="tab2">
-                <p>Contenu</p>
+                <div class="card">
+                  <h2>Matériel utilisé</h2>
+
+                  <div class="types-grid">
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>Wio Terminal</h3>
+                      <p>Microcontrôleur Seeed avec écran intégré, compatible Arduino, servant de plateforme de
+                        développement
+                        et d'affichage des résultats.</p>
+                    </div>
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>Caméra Grove AI</h3>
+                      <p>Module intelligent équipé d'un processeur IA dédié, capable de traiter et classifier les images
+                        en temps réel de manière autonome.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <h2>Collecte et préparation des données</h2>
+
+                  <p>
+                    La première étape a consisté à créer un <strong>dataset d'entraînement</strong>. Initialement,
+                    des objets du quotidien ont été photographiés sous différents angles pour obtenir un ensemble varié.
+                    Face à des résultats insuffisants, un dataset plus robuste contenant des jetons colorés (rouges et
+                    bleus)
+                    a été utilisé pour la suite du projet.
+                  </p>
+
+                  <div class="types-grid">
+                    <div class="figure-container">
+                      <img src="images/iot/jetonbleu.png" alt="Jeton bleu"
+                        style="width: 60%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                      <p class="figure-caption">Jeton bleu (Classe 0)</p>
+                    </div>
+                    <div class="figure-container">
+                      <img src="images/iot/jetonrouge.png" alt="Jeton rouge"
+                        style="width: 60%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                      <p class="figure-caption">Jeton rouge (Classe 2)</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div class="tab-content " id="tab3">
-                <p>Contenu</p>
-              </div>
-
-              <div class="tab-content " id="tab4">
-
                 <div class="tabs tabs-prototypes">
                   <div class="tab-buttons">
                     <button class="tab-btn active" data-tab="tab_1">Entraînement du modèle YOLO-5</button>
                     <button class="tab-btn" data-tab="tab_2">Tests avec la caméra Grove AI</button>
                     <button class="tab-btn" data-tab="tab_3">Programme Arduino : Comptage intelligent</button>
-                    <button class="tab-btn" data-tab="tab_4">Transmission IoT et visualisation</button>
+                    <button class="tab-btn" data-tab="tab_4">LoRa - Helium - TagoIO</button>
+                    <button class="tab-btn" data-tab="tab_5">Transmission IoT et visualisation</button>
+                  </div>
+
+
+                  <div class="tab-content active" id="tab_1">
+                    <div class="card">
+                      <h3>Entraînement du modèle YOLO-5</h3>
+
+                      <h4>Plateforme Roboflow</h4>
+
+                      <p>
+                        <strong>Roboflow</strong> a été utilisé pour créer et annoter le dataset. Cette plateforme
+                        permet
+                        de
+                        préparer facilement des jeux de données pour l'apprentissage automatique en fournissant des
+                        outils
+                        d'annotation intuitifs et une gestion efficace des images.
+                      </p>
+
+                      <h4>Entraînement sur Google Colab</h4>
+
+                      <p>
+                        Le modèle <span class="highlight">YOLO-5</span> a été entraîné sur Google Colab, bénéficiant de
+                        ressources GPU gratuites pour accélérer le processus d'apprentissage.
+                      </p>
+
+                      <div class="type-card" style="padding: 25px; margin: 25px 0;">
+                        <h3>Résultats du premier dataset</h3>
+                        <ul class="tech-list">
+                          <li style="display: flex; justify-content: space-between; align-items: center;">
+                            <p>
+                              <strong>Baume à lèvre : 57% de précision</strong>
+                              Taux insuffisant dû à un manque de variété dans les images d'entraînement.
+                            </p>
+                            <img src="images/iot/balm57.png" alt="Baume à lèvre : 57% de précision"
+                              style="width: 200px; height: auto; margin-left: 10px; border-radius: 15px;">
+                          </li>
+
+                          <li style="display: flex; justify-content: space-between; align-items: center;">
+                            <p>
+                              <strong>Clé USB : 58% de précision</strong>
+                              Performance médiocre révélant la pauvreté du dataset initial.
+                            </p>
+                            <img src="images/iot/usbdb.png" alt="Clé USB : 58% de précision"
+                              style="width: 200px; height: auto; margin-left: 10px; border-radius: 15px;">
+                          </li>
+
+                          <li style="display: flex; justify-content: space-between; align-items: center;">
+                            <p>
+                              <strong>mAP50 (Validation Set) : 30</strong>
+                              Indicateur de performance globale faible, confirmant la nécessité d'un dataset plus
+                              robuste.
+                            </p>
+                            <div class="flex">
+                              <img src="images/iot/robof1.png" alt="Validation set"
+                                style="width: 300px; height: auto; margin-left: 10px; border-radius: 15px;">
+                              <img src="images/iot/robof2.png" alt="Test set"
+                                style="width: 300px; height: auto; margin-left: 10px; border-radius: 15px;">
+                            </div>
+
+                          </li>
+                        </ul>
+                        <p>
+                          Le <strong>mAP50 (Mean Average Precision)</strong> mesure la précision du modèle en tenant
+                          compte
+                          de l'IoU (Intersection over Union) supérieur à 50%. Un mAP élevé indique une bonne détection
+                          sans
+                          trop de faux positifs ni de faux négatifs.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-content " id="tab_2">
+                    <div class="card">
+                      <h2>Tests avec la caméra Grove AI</h2>
+
+                      <p>
+                        Après transfert du modèle optimisé sur la caméra, les tests en conditions réelles ont montré
+                        d'excellentes performances :
+                      </p>
+
+                      <div class="stats">
+                        <div class="stat-item">
+                          <div class="stat-number">91%</div>
+                          <div class="stat-label">Précision jetons bleus</div>
+                        </div>
+                        <div class="stat-item">
+                          <div class="stat-number">91%</div>
+                          <div class="stat-label">Précision jetons rouges</div>
+                        </div>
+                        <div class="stat-item">
+                          <div class="stat-number">&gt;80%</div>
+                          <div class="stat-label">Seuil de confiance</div>
+                        </div>
+                      </div>
+
+                      <div class="types-grid">
+                        <div class="figure-container">
+                          <img src="images/iot/cam1.png" alt="Détection jeton bleu"
+                            style="width: 80%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                          <p class="figure-caption">Détection en temps réel - Jeton bleu (91%)</p>
+                        </div>
+                        <div class="figure-container">
+                          <img src="images/iot/cam2.png" alt="Détection jeton rouge"
+                            style="width: 80%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                          <p class="figure-caption">Détection en temps réel - Jeton rouge (91%)</p>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="tab-content " id="tab_3">
+                    <div class="card">
+                      <h2>Programme Arduino : Comptage intelligent</h2>
+
+                      <p>
+                        Un programme Arduino a été développé pour exploiter le modèle de classification et réaliser un
+                        <strong>comptage automatique</strong> des jetons détectés. Le système implémente :
+                      </p>
+
+                      <ul class="tech-list">
+                        <li>
+                          <strong>Détection sélective</strong>
+                          Seuil de confiance minimum de 80% pour valider une détection et éviter les faux positifs.
+                        </li>
+                        <li>
+                          <strong>Compteurs indépendants</strong>
+                          Incrémentation automatique de compteurs distincts pour les jetons rouges et bleus.
+                        </li>
+                        <li>
+                          <strong>Transmission optimisée</strong>
+                          Séparation des bits de poids fort et faible pour optimiser l'envoi des données entières via
+                          LoRaWAN. Les données seront reconstruite en arrivant sur le réseau Hélium.
+                        </li>
+                        <li>
+                          <strong>Envoi déclenché</strong>
+                          Transmission immédiate lors d'une détection, sinon envoi automatique toutes les 20 secondes.
+                        </li>
+                      </ul>
+
+                      <div class="type-card" style="padding: 20px; margin: 20px 0;">
+                        <h4>Logique du code</h4>
+                        <p style="font-family: 'Courier New', monospace; font-size: 0.9em; line-height: 1.6;">
+                          <strong>Si confiance > 80% :</strong><br>
+                          - Classe 0 → counterBlue++<br>
+                          - Classe 2 → counterRed++<br>
+                          - Envoi immédiat via LoRaWAN<br>
+                          <br>
+                          <strong>Sinon :</strong><br>
+                          - Envoi toutes les 20s avec valeurs actuelles
+                        </p>
+                      </div>
+
+                      <div class="figure-container">
+                        <img src="images/iot/comptage.png" alt="Moniteur série Arduino"
+                          style="width: 50%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                        <p class="figure-caption">Incrémentation des compteurs sur le moniteur série Arduino</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-content " id="tab_4">
+                    <div class="card">
+                      <div class="type-card">
+                        <h3>Technologie LoRa</h3>
+                        <p>
+                          La connectivité <span class="highlight">LoRa</span> repose sur un protocole de
+                          communication longue portée et basse consommation,
+                          spécifiquement conçu pour les objets connectés (IoT). Elle permet d'assurer une
+                          transmission fiable des données tout en minimisant
+                          la consommation énergétique.
+                        </p>
+
+                        <div class="figure-container" style="text-align: center;">
+                          <img src="images/iot/lora.jpg" alt="Architecture LoRa"
+                            style="width: 60%; height: auto; border-radius: 12px; margin: 10px auto;">
+                          <p class="figure-caption">Architecture du réseau LoRa</p>
+                        </div>
+
+                        <p>
+                          Le réseau LoRa adopte une <span class="highlight">architecture en étoile</span> avec
+                          communication bidirectionnelle,
+                          composée de trois éléments principaux :
+                        </p>
+
+                        <ul class="tech-list">
+                          <li><strong>Appareils LoRa</strong>
+                            <p>
+                              Il s'agit de capteurs ou d'appareils IoT qui collectent des données
+                              (température, humidité, pression, etc.) et les transmettent via une antenne LoRa.
+                              Ces dispositifs sont généralement alimentés par batterie et optimisés
+                              pour une <em>faible consommation d'énergie</em>.
+                            </p>
+                          </li>
+
+                          <li><strong>Passerelles LoRa (LoRa Gateway)</strong>
+                            <p>
+                              Les passerelles reçoivent les signaux émis par les appareils LoRa,
+                              puis les convertissent en un format compatible avec les réseaux IP classiques.
+                              Elles jouent le rôle de <em>relais</em> entre les appareils et le serveur réseau.
+                            </p>
+                          </li>
+
+                          <li><strong>Serveur de réseau</strong>
+                            <p>
+                              Le serveur central <em>rassemble et traite</em> les messages transmis par les
+                              passerelles.
+                              Il les décode, filtre les doublons et redirige les données vers l'application
+                              ou le service cloud correspondant.
+                            </p>
+                          </li>
+                        </ul>
+
+                        <div class="stats" style="margin-top: 30px;">
+                          <div class="stats" style="margin-top: 25px;">
+                            <div class="stat-item">
+                              <div class="stat-number">10+ km</div>
+                              <div class="stat-label">Portée typique de communication</div>
+                            </div>
+                            <div class="stat-item">
+                              <div class="stat-number">🔋</div>
+                              <div class="stat-label">Faible consommation énergétique</div>
+                            </div>
+                            <div class="stat-item">
+                              <div class="stat-number">🌐</div>
+                              <div class="stat-label">Architecture en étoile</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="type-card">
+                        <h3>Réseau Helium</h3>
+                        <p>
+                          <span class="highlight">Helium</span> est un réseau mondial décentralisé conçu pour
+                          connecter les objets intelligents (IoT).
+                          Il connaît aujourd’hui la plus forte croissance du marché dans le domaine des réseaux
+                          longue portée publics compatibles avec <strong>LoRaWAN</strong>.
+                        </p>
+
+                        <div class="figure-container" style="text-align: center;">
+                          <img src="images/iot/helium.webp" alt="Réseau Helium"
+                            style="width: 60%; height: auto; border-radius: 12px; margin: 10px auto;">
+                          <p class="figure-caption">Diversification du réseau Helium</p>
+                        </div>
+
+                        <div class="types-grid" style="margin-top: 20px;">
+                          <div class="type-card">
+                            <h3>Hotspots ou mineurs</h3>
+                            <p>
+                              Le réseau Helium repose sur des <span class="highlight">hotspots</span>, aussi appelés
+                              mineurs,
+                              qui fournissent une couverture sans fil publique longue portée.
+                              Chaque hotspot agit comme une passerelle LoRaWAN, relayant les données des appareils
+                              IoT
+                              tout en participant à la construction d’un réseau collaboratif mondial.
+                            </p>
+                          </div>
+
+                          <div class="type-card">
+                            <h3>Blockchain Helium</h3>
+                            <p>
+                              La <span class="highlight">blockchain Helium</span> est une blockchain publique et
+                              open source
+                              spécifiquement conçue pour soutenir le développement de réseaux physiques
+                              décentralisés.
+                              Elle garantit la transparence, la traçabilité et la sécurité des échanges de données
+                              sur le réseau.
+                            </p>
+                          </div>
+
+                          <div class="type-card">
+                            <h3>Modèle de récompense</h3>
+                            <p>
+                              Helium adopte un <strong>modèle économique participatif</strong> :
+                              les utilisateurs qui contribuent à l’infrastructure du réseau sont récompensés en
+                              jetons HNT.
+                              Ce mécanisme incite à l’expansion continue du réseau tout en maintenant son autonomie.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="stats" style="margin-top: 30px;">
+                          <div class="stat-item">
+                            <div class="stat-number">🌍</div>
+                            <div class="stat-label">Réseau mondial décentralisé</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">+1M</div>
+                            <div class="stat-label">Hotspots actifs dans le monde</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">🔗</div>
+                            <div class="stat-label">Blockchain open source</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="type-card">
+                        <h3>Plateforme TagoIO</h3>
+                        <p>
+                          <span class="highlight">TagoIO</span> est une plateforme IoT tout-en-un qui offre un ensemble
+                          complet d’outils
+                          pour la <strong>création</strong>, la <strong>gestion</strong> et le
+                          <strong>déploiement</strong> d’applications connectées.
+                          Elle facilite la communication entre les objets IoT, les passerelles et les services cloud,
+                          tout en assurant une gestion efficace des périphériques et des protocoles de communication.
+                        </p>
+
+                        <div class="figure-container" style="text-align: center;">
+                          <img src="images/iot/tagoio.png" alt="Plateforme TagoIO"
+                            style="width: 60%; height: auto; border-radius: 12px; margin: 10px auto;">
+                          <p class="figure-caption">Interface de la plateforme TagoIO</p>
+                        </div>
+
+                        <div class="types-grid" style="margin-top: 20px;">
+                          <div class="type-card">
+                            <h3>Interface unifiée</h3>
+                            <p>
+                              TagoIO centralise la gestion des <strong>données</strong>, des <strong>dashboards</strong>
+                              et des <strong>périphériques</strong>
+                              au sein d’une interface ergonomique et intuitive.
+                              Les utilisateurs peuvent visualiser les mesures en temps réel et surveiller leurs
+                              dispositifs connectés.
+                            </p>
+                          </div>
+
+                          <div class="type-card">
+                            <h3>Connexion fluide</h3>
+                            <p>
+                              Grâce à son intégration native avec les réseaux <strong>LoRaWAN</strong> et les services
+                              tels que <strong>Helium</strong>,
+                              la plateforme assure une transmission fluide des données entre les objets connectés, les
+                              passerelles
+                              et le cloud. Elle s’adapte ainsi parfaitement aux architectures IoT hybrides.
+                            </p>
+                          </div>
+
+                          <div class="type-card">
+                            <h3>Écosystème IoT complet</h3>
+                            <p>
+                              En plus du stockage et de la visualisation, TagoIO propose des outils d’analyse,
+                              de gestion des utilisateurs, et d’automatisation de scénarios.
+                              Cette approche intégrée permet un <span class="highlight">déploiement rapide et
+                                fiable</span>
+                              des solutions IoT, de la donnée brute à l’application finale.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="stats" style="margin-top: 30px;">
+                          <div class="stat-item">
+                            <div class="stat-number">📊</div>
+                            <div class="stat-label">Visualisation temps réel</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">☁️</div>
+                            <div class="stat-label">Intégration cloud simplifiée</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">🔗</div>
+                            <div class="stat-label">Compatible LoRa & Helium</div>
+                          </div>
+                          <div class="stat-item">
+                            <div class="stat-number">⚙️</div>
+                            <div class="stat-label">Automatisation intelligente</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+
+                  <div class="tab-content " id="tab_5">
+                    <div class="card">
+
+                      <h3>Transmission IoT et visualisation des données</h3>
+
+                      <p>
+                        Les données collectées par le Wio Terminal sont transmises via le protocole
+                        <span class="highlight">LoRaWAN</span> vers le réseau Helium, puis visualisées
+                        sur la plateforme <strong>TagoIO</strong>. Cette architecture IoT complète permet
+                        un suivi en temps réel des détections.
+                      </p>
+
+                      <h4>Architecture de communication</h4>
+
+                      <p>
+                        <strong>ChirpStack</strong> a été utilisé comme middleware pour faciliter la gestion
+                        de la communication entre le module LoRaWAN et la plateforme cloud Helium. Ce système
+                        intermédiaire permet de configurer les capteurs et de router efficacement les données.
+                      </p>
+
+                      <div class="types-grid">
+                        <div class="type-card" style="padding: 25px;">
+                          <h3>Device Profile</h3>
+                          <p>Configuration des paramètres du module LoRaWAN (fréquences, puissance, facteur
+                            d'étalement).
+                          </p>
+                        </div>
+                        <div class="type-card" style="padding: 25px;">
+                          <h3>Application Helium</h3>
+                          <p>Gestion des événements et messages reçus avec horodatage pour traçabilité complète.</p>
+                        </div>
+                        <div class="type-card" style="padding: 25px;">
+                          <h3>Intégration HTTP</h3>
+                          <p>Transmission automatique des données vers TagoIO via requêtes POST configurables.</p>
+                        </div>
+                      </div>
+
+                      <div class="figure-container">
+                        <img src="images/iot/deviceprofile.png" alt="Device Profile Helium"
+                          style="width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                        <p class="figure-caption">Configuration du Device Profile</p>
+                      </div>
+
+                      <h4>Connexion Helium - TagoIO</h4>
+
+                      <p>
+                        La liaison entre Helium et TagoIO s'établit via une <strong>intégration HTTP</strong>
+                        qui transmet automatiquement les événements sous forme de requêtes POST. La connexion
+                        utilise des tokens d'authentification et un numéro de série unique pour identifier le device.
+                      </p>
+
+                      <h4>Visualisation sur TagoIO</h4>
+
+                      <p>
+                        La plateforme TagoIO offre des outils puissants pour créer des <strong>tableaux de bord
+                          personnalisés</strong>.
+                        Des graphiques temporels permettent de visualiser l'évolution des compteurs de jetons en temps
+                        réel,
+                        avec un historique complet des détections.
+                      </p>
+
+                      <div class="figure-container">
+                        <img src="images/iot/comptagetago.png" alt="Dashboard TagoIO"
+                          style="width: 60%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
+                        <p class="figure-caption">Tableau de bord TagoIO - Suivi en temps réel des compteurs</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                <div class="tab-content active" id="tab_1">
-                  <p>Contenu</p>
-                </div>
-
-                <div class="tab-content " id="tab_2">
-                  <p>Contenu</p>
-                </div>
-
-                <div class="tab-content " id="tab_3">
-                  <p>Contenu</p>
-                </div>
-
-                <div class="tab-content " id="tab_4">
-                  <p>Contenu</p>
-                </div>
-
               </div>
+              
+              <div class="tab-content " id="tab4">
+                <div class="card">
+                  <h2>Résultats et limitations</h2>
 
-              <div class="tab-content " id="tab5">
+                  <div class="type-card" style="padding: 25px; margin: 25px 0;">
+                    <h3>Points forts</h3>
+                    <ul class="tech-list">
+                      <li>
+                        <strong>Précision élevée</strong>
+                        Plus de 90% de taux de réussite avec le dataset optimisé, démontrant l'efficacité du modèle.
+                      </li>
+                      <li>
+                        <strong>Intégration complète</strong>
+                        Chaîne fonctionnelle de bout en bout : acquisition → traitement → transmission → visualisation.
+                      </li>
+                      <li>
+                        <strong>Temps réel</strong>
+                        Classification et affichage instantanés grâce au processeur IA embarqué de la caméra Grove.
+                      </li>
+                    </ul>
+                  </div>
 
-                <div class="tabs tabs-prototypes">
-                  <div class="tab-buttons">
-                    <button class="tab-btn active" data-tab="tab_1">Résultats et limitations</button>
-                    <button class="tab-btn" data-tab="tab_2">Compétences développées</button>
-                    <button class="tab-btn" data-tab="tab_3">Conclusion</button>
+                  <div class="type-card" style="padding: 25px; margin: 25px 0;">
+                    <h3>Limitations identifiées</h3>
+                    <ul class="tech-list">
+                      <li>
+                        <strong>Comptage statique</strong>
+                        Le compteur s'incrémente même avec un jeton immobile, nécessitant l'ajout d'une détection
+                        de mouvement pour un usage pratique.
+                      </li>
+                      <li>
+                        <strong>Qualité du dataset</strong>
+                        L'importance d'un dataset varié et suffisamment fourni a été démontrée par
+                        l'échec du premier entraînement.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <h3>Compétences développées</h3>
+
+                  <div class="types-grid">
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>Vision par ordinateur</h3>
+                      <p>Préparation de datasets, annotation d'images, entraînement de modèles YOLO-5</p>
+                    </div>
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>IA</h3>
+                      <p>Classification de data set, entraînement de modèles, compréhension accrue du fonctionnement de
+                        l'IA</p>
+                    </div>
+                    <div class="type-card" style="padding: 25px;">
+                      <h3>IoT et télémétrie</h3>
+                      <p>Protocole LoRaWAN, transmission optimisée, visualisation temps réel sur plateforme cloud</p>
+                    </div>
                   </div>
                 </div>
-
-                <div class="tab-content active" id="tab_1">
-                  <p>Contenu</p>
-                </div>
-
-                <div class="tab-content " id="tab_2">
-                  <p>Contenu</p>
-                </div>
-
-                <div class="tab-content " id="tab_3">
-                  <p>Contenu</p>
-                </div>
-
               </div>
-
-
-            </div>
         </article>
 
         <!-- Projet 6 : Robot Stäubli -->
