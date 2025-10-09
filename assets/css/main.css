@@ -3644,6 +3644,7 @@ body.is-touch .poptrox-popup .closer {
   overflow: hidden;
   border-radius: 8px;
   background: #ffffff;
+  border-radius: 15px;
 }
 
 .carousel-inner {
@@ -3806,9 +3807,9 @@ body.is-touch .poptrox-popup .closer {
 
 .tech-list li {
   background: #f8f9fa;
-  padding: 10px;
+  padding: 5px;
   padding-left: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   border-left: 4px solid #61368a;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -3850,17 +3851,20 @@ body.is-touch .poptrox-popup .closer {
 
 .stat-number {
   font-size: 2em;
+  padding: 15px;
   font-weight: bold;
   background: linear-gradient(135deg, #61368a 0%, #F3E5F5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  z-index: 99;
 }
 
 .stat-label {
   color: #666;
+  font-size: "Quicksand", sans-serif;
   margin-top: 10px;
-  font-size: 0.9em;
+  font-size: 1.1em;
 }
 
 .icon {
@@ -3924,14 +3928,22 @@ body.is-touch .poptrox-popup .closer {
 
 .figure-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  margin: 20px 0;
-  padding: 10px;
-  background: white;
-  border-radius: 15px;
-  text-align: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.figure-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.figure-container img:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .figure-image {
@@ -4016,15 +4028,16 @@ body.is-touch .poptrox-popup .closer {
 }
 
 .spec-item {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  padding: 25px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e3c7ff 100%);
+  padding: 20px;
+  margin-bottom: 10px;
   border-radius: 12px;
   border-left: 4px solid #c0c0c0;
 }
 
 .spec-item h4 {
-  color: #667eea;
-  font-size: 1.2em;
+  color: #dbdbdb;
+  font-size: 0.9em;
   margin-bottom: 10px;
 }
 
@@ -4144,4 +4157,25 @@ body.is-touch .poptrox-popup .closer {
 .grid-cell.filled {
   background: linear-gradient(135deg, #61368a 0%, #a07347 100%);
   color: white;
+}
+
+pre code {
+  display: block;
+  background: #1e1e1e;
+  color: #e0e0e0;
+  padding: 15px;
+  border-radius: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95em;
+  line-height: 1.6;
+  overflow-x: auto;
+  animation: fadeInUp 0.8s ease;
+}
+
+pre code::before {
+  content: "💻 Code VAL3";
+  display: block;
+  color: #a07347;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
